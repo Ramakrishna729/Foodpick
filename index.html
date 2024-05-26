@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+   
+    <link rel="stylesheet" href="./style.css" />
+    
+    <title>Foodpic</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="headerContainer">
+        <div class=" header">
+          <span class="logColor color">FOODPICK</span>
+          <!-- <span class = "logoColor2 color">fic</span> -->
+        </div>
+      </div>
+    </header>
+    <div class = "bg-image"></div>
+
+    <main>
+      <div id="LoginContainer" class="loginContent">
+        <div class="formWrapper" >
+          <div class="form">
+            <h3 class="login">Login to Foodpick</h3>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="Phone number"
+                id="login_phonenumber"
+                pattern="[0-9]{9}"
+                autocomplete = "off"
+              />
+            </div>
+            <div class="errorContainer">
+              <sapn class="error" id="phone_err"
+                >please check your phonenumber</sapn
+              >
+            </div>
+            <div class="input-box">
+              <input
+                type="password"
+                placeholder="Password"
+                id="login_password"
+              />
+            </div>
+            <div class="errorContainer">
+              <sapn class="error" id="pwd_err">please check your password</sapn>
+            </div>
+            <button
+              class="btn"
+              id="login_btn"
+              onclick="loginBtn()"
+              style="background-color: orange"
+            >
+              Login
+            </button>
+            <div class="register-link">
+              <p>
+                New User Click Here 
+                <span
+                 
+                  onclick="showRegister()"
+                  >  <a href="#" class="icon">  <i class="fa-solid fa-user"  style="cursor: pointer; color: orange; font-size:20px"></i> </a></span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="RegisterContainer" class="registerContent">
+        <div>
+          <button class="clsoeBtn" id="RegClose" onclick="regClose()">Login</button>
+        </div>
+        <div class="formWrapper">
+          <div class="form" autocomplete = "off">
+            <h3 class="register-header">Register to Foodfic</h3>
+            <div class="input-box">
+              <input type="text" placeholder="Name" id="RegName" />
+            </div>
+            <div class="errorContainer">
+              <sapn class="error" id="RegName_err"
+                >please check your name</sapn
+              >
+            </div>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="Phone number"
+                id="RegPhoneNumber"
+                pattern="[0-9]{9}"
+              />
+            </div>
+            <div class="errorContainer">
+              <sapn class="error" id="RegPhone_err"
+                >please check your phonenumber</sapn
+              >
+            </div>
+            <div class="input-box">
+              <input type="email" placeholder="Email" id="RegEmail" />
+            </div>
+            <div class="errorContainer">
+              <sapn class="error" id="RegEmai_err"
+                >please check your Email</sapn
+              >
+            </div>
+            <div class="input-box">
+              <input type="password" placeholder="Password" id="RegPassword" />
+            </div>
+            <div class="errorContainer">
+              <sapn class="error" id="RegPwd_err"
+                >please check your password</sapn
+              >
+            </div>
+            <div class="input-box">
+              <input
+                type="password"
+                placeholder="Confirm password"
+                id="RegConfirmPassword"
+              />
+            </div>
+            <div class="errorContainer">
+              <sapn class="error" id="RegCrfmPwd_err"
+                >please check your confirm password</sapn
+              >
+            </div>
+            <button
+              class="btn"
+              id="register_btn"
+              onclick="registerBtn()"
+              style="background-color: orange"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="./index.js"></script>
+  </body>
+</html>

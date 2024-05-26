@@ -1,0 +1,14 @@
+//index.js
+99 // document.getElementById("RegisterContainer").style.display = "none";
+100        // document.getElementById("LoginContainer").style.display = "block";
+130 // Check phone number length (adjust as needed)
+136 // Check if phone number starts with a valid prefix (adjust as needed)
+//181 to 187
+
+// /function Resetments() {
+//     document.getElementById("RegName").value = "";
+//     document.getElementById("RegEmail").value = "";
+//     document.getElementById("RegPhoneNumber").value = "";
+//     document.getElementById("RegPassword").value = "";
+//     document.getElementById("RegConfirmPassword").value = "";
+//   }

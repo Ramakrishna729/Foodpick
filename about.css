@@ -1,0 +1,83 @@
+ 
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+.awards, .more-about-us {
+    margin-top: 30px;
+}
+
+.awards h2, .more-about-us h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.awards ul, .more-about-us ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.awards li, .more-about-us li {
+    margin-bottom: 5px;
+}
+
+.awards ul {
+    padding-left: 20px;
+}
+
+
+
+ /* Footer CSS  */
+  /* .footer {
+    background-color: orange;
+    color: white;
+    padding: 20px 0;
+    
+} */
+.footer-container{
+    position:fixed;
+    width:1200px;
+    height:130px;
+    background-color:orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+    color: black;
+    bottom: 1px;
+    right:1px;
+    
+
+
+}
+
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-icon {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-icon img {
+    width: 35px;
+    height: 35px;
+}
+

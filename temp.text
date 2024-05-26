@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/92d70a2fd8.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="admin.css" />
+        <title>Product Filter</title>
+    </head>
+    <body>
+    <!-- Header information -->
+        <nav class="header">
+            <div class="header-left">
+                <a   class="header-brand"href="#">FOODFIC</a>
+            </div>
+            <div class="header-right">
+                <a href="#" class="icon"> <i class="fa-solid fa-envelope"></i> </a>
+                <a href="#" class="icon"> <i class="fa-solid fa-user"></i> </a>
+                <a href="#" class="icon">Logout</a>
+            </div>
+        </nav>
+
+        <div class="navbarContainer">
+            <div class="recipes" >Recipes
+                <div class="dropdown-content">
+                    <a href="#" data-filter="all">All</a>
+                    <a href="#" data-filter="break-fast">Break-fast</a>
+                    <a href="#" data-filter="lunch">Lunch</a>
+                    <a href="#" data-filter="dinner">Dinner</a>
+                </div>
+            </div>
+            
+            <div class="aboutus" id="aboutus">About us</div>
+            <div class="addItems" id="addItems">Add items</div>
+            <div class="icons">
+                <div>
+                    <a> <i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <div>
+                    <a> <i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <div>
+                    <a> <i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="line"><hr /></div> -->
+        <div class='product-container' style="background-color: yellow;">aa</div>
+        <!-- <script src="admin.js"></script> -->
+    </body>
+</html>
