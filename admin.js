@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function displayProducts(filteredProducts) {
     productContainer.innerHTML = "";
-    filteredProducts.forEach((product) => {
+    filteredProducts.forEach((product, index) => {
       const productElement = document.createElement("div");
       productElement.className = "product";
       productElement.dataset.itemid = product.id;
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
       productContainer.appendChild(productElement);
       productElement.addEventListener("click", (event) => {
         event.preventDefault();
-        te(product);
+        te(product, index);
       });
     });
   }
@@ -180,13 +180,22 @@ document.getElementById("saveProductBtn").addEventListener("click", () => {
 
 let currentEditingProductIndex = null;
 
+// both add and edit popup
 function showPopup(product = null, index = null) {
   const popup = document.getElementById("productPopup");
   popup.classList.add("active");
 
   document.getElementById("productTitle").value = product ? product.title : "";
   document.getElementById("productImage").value = "";
-  document.getElementById("productItem").value = product ? product.item : "";
+  const categorySel = document.getElementById("productItem");
+
+  // update selected index according category of the product
+  Array.from(categorySel.options).forEach((option, index) => {
+    if (option.value.toUpperCase() === product?.item) {
+      categorySel.selectedIndex = index;
+    }
+  });
+
   document.getElementById("productPrice").value = product ? product.price : "";
 
   currentEditingProductIndex = index;
@@ -195,21 +204,23 @@ function showPopup(product = null, index = null) {
     ? "Update Product"
     : "Add New Product";
 }
+function closeEditDeletePopup() {
+  const popup = document.getElementById("edit-delete-modal");
+  if (popup) {
+    popup.remove();
+  }
+}
 
 function closePopup() {
   const popup = document.getElementById("productPopup");
   popup.classList.remove("active");
 }
 
-function saveProduct() {
-  const title = document.getElementById("productTitle").value.toUpperCase();
-  const imageInput = document.getElementById("productImage");
-  const item = document.getElementById("productItem").value.toUpperCase();
-  const price = document.getElementById("productPrice").value;
-
+function isValidProductDetails({ item, title, imageInput, price }) {
   let isValid = true;
 
   if (!title) {
+    // check if title is empty
     isValid = false;
     document.getElementById("titleValidation").innerText = "Title is required";
     document.getElementById("titleValidation").style.display = "block";
@@ -242,6 +253,16 @@ function saveProduct() {
   } else {
     document.getElementById("priceValidation").style.display = "none";
   }
+  return isValid;
+}
+
+function saveProduct() {
+  const title = document.getElementById("productTitle").value.toUpperCase();
+  const imageInput = document.getElementById("productImage");
+  const item = document.getElementById("productItem").value.toUpperCase();
+  const price = document.getElementById("productPrice").value;
+
+  const isValid = isValidProductDetails({ title, imageInput, item, price });
 
   if (isValid) {
     let image = "";
@@ -258,16 +279,17 @@ function saveProduct() {
         };
 
         if (currentEditingProductIndex !== null) {
-          addproducts[currentEditingProductIndex] = newProduct;
+          products[currentEditingProductIndex] = newProduct;
+          localStorage.setItem("allProducts", JSON.stringify(products));
           currentEditingProductIndex = null;
         } else {
           products.push(newProduct);
           localStorage.setItem("allProducts", JSON.stringify(products));
-          //   addproducts.push(newProduct);
         }
-
-        // renderProducts();
         closePopup();
+        closeEditDeletePopup();
+        window.location.reload();
+        // renderProducts();
       };
       reader.readAsDataURL(imageInput.files[0]);
     }
@@ -310,6 +332,7 @@ function renderProducts(itemid) {
 }
 
 function editProduct(index) {
+  // const editingProduct = products.find((obj) => obj.id === id);
   showPopup(products[index], index);
 }
 
@@ -339,11 +362,12 @@ function adminIcon() {
 
 // }
 
-function te(obj) {
+function te(obj, index) {
   console.log(obj);
   let product = obj;
   let body = document.getElementsByTagName("body")[0];
   const productItem = document.createElement("div");
+  productItem.id = "edit-delete-modal";
   productItem.classList.add("testingPopup");
   productItem.style.position = "fixed";
   productItem.display = "block";
@@ -364,7 +388,7 @@ function te(obj) {
             
         </div>    
             <div class="edit-delete">
-                <button onclick='editProduct()'>Edit</button>
+                <button onclick="editProduct('${index}')">Edit</button>
                 <button onclick="deleteProduct('${product.id}')">Delete</button>
             </div>
         `;
