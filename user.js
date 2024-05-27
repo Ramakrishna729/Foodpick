@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById("about-container").style.display = "block"
      })
     document.getElementById('count').addEventListener("click",()=>{
-        debugger
+        
         document.getElementById("popupContainerside").style.display="block"
         
 
