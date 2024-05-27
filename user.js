@@ -103,14 +103,16 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     document.getElementById("buyButton").addEventListener("click",showPayment)
+
+    document.getElementById('downloadButton').addEventListener('click', downloadpdf)
      
 
  })
 
-document.getElementById("root").addEventListener("click",function(){
-    rootItem.style.display = "block";
-    aboutContainer.style.display = "none"
-})
+// document.getElementById("root").addEventListener("click",function(){
+//     rootItem.style.display = "block";
+//     aboutContainer.style.display = "none"
+// })
 
 
 
@@ -123,7 +125,9 @@ document.getElementById("recipes").addEventListener("click",function(){
     location.reload();
 })
 
-document.getElementById("proceedButton").addEventListener("click",confirmationPopup)
+// document.getElementById("proceedButton").addEventListener("click",confirmationPopup)
+
+
  function confirmationPopup(){
     document.getElementById("paymentPopup").style.display = "none"
     document.getElementById("confirmationPopup").style.display = "block"
@@ -201,6 +205,11 @@ document.getElementById('proceedButton').addEventListener('click', function() {
         const products = JSON.parse(localStorage.getItem('products'));
         console.log('Products:', products);
     }
+
+    if(isValid){
+        confirmationPopup(); 
+    }
+    
 });
 
 // let products=localStorage.getItem("allProducts")? JSON.parse(localStorage.getItem("allProducts")):[]
@@ -214,6 +223,34 @@ function showPayment(){
     debugger
     document.getElementById("popupContainerside").style.display = "none"
     document.getElementById("paymentPopup").style.display = "block"
+    let bookedCart=document.getElementById("cartItems")
+    
+    console.log(cart)
+    cart.forEach(obj=>{
+        bookedCart.insertAdjacentHTML("beforeend",`
+        <li>${obj.title}</li>`) 
+    })
+
+}
+
+
+
+function downloadpdf (){
+    const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        
+        doc.text('Order Confirmation', 10, 10);
+        doc.text('Name: Ramakrishna', 10, 20);
+        doc.text('Address: 7/72 Foodpick(street), Rajajinagar, Bangalore, 515305', 10, 30);
+        
+
+         let yPosition = 40;
+        cart.forEach(product => {
+         doc.text(`${product.itme}`, 10, yPosition);
+         yPosition += 10;
+        });
+        
+        doc.save('order_confirmation.pdf');
 
 }
 
@@ -225,35 +262,19 @@ function showPayment(){
 
 
 
- const products1 = JSON.parse(localStorage.getItem('products')) || [];
- const cartItemsElement = document.getElementById('cartItems');
- cartItemsElement.innerHTML = '';
+//  const products1 = JSON.parse(localStorage.getItem('products')) || [];
+//  const cartItemsElement = document.getElementById('cartItems');
+//  cartItemsElement.innerHTML = '';
 
- products1.forEach(product => {
-     const li = document.createElement('li');
-     li.textContent = `${product.name} - $${product.price}`;
-     cartItemsElement.appendChild(li);
- });
+//  products1.forEach(product => {
+//      const li = document.createElement('li');
+//      li.textContent = `${product.name} - $${product.price}`;
+//      cartItemsElement.appendChild(li);
+//  });
 // }
 // });
 
-document.getElementById('downloadButton').addEventListener('click', function() {
-const { jsPDF } = window.jspdf;
-const doc = new jsPDF();
 
-doc.text('Order Confirmation', 10, 10);
-doc.text('Name: Ramakrishna', 10, 20);
-doc.text('Address: 7/72 Foodpick(street), Rajajinagar, Bangalore, 515305', 10, 30);
-
-const products1 = JSON.parse(localStorage.getItem('products')) || [];
-let yPosition = 40;
-products1.forEach(product => {
- doc.text(`${product.name} - $${product.price}`, 10, yPosition);
- yPosition += 10;
-});
-
-doc.save('order_confirmation.pdf');
-});
 
 // Example of setting product data in local storage
 localStorage.setItem('products', JSON.stringify([
