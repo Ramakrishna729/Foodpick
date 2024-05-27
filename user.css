@@ -136,7 +136,7 @@ button{
     cursor: pointer;
     color: white;
     font-size: 20px;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 button:hover{
     background-color: #333;
@@ -197,7 +197,7 @@ button:hover{
     width:50px;
     background-color:white;
     color:black;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: bold;
     font-size: 15px;
     margin-right: 20px;
@@ -249,9 +249,9 @@ input[type="text"], select {
     margin-top: 4pxpx;
 }
 
-.footer{
+/* .footer{
     visibility: hidden;
-}
+} */
 
 
 

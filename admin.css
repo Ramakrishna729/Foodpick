@@ -95,6 +95,7 @@ body {
   color: grey;
   letter-spacing: 2.5px;
   margin-left: 500px;
+  font-size:16px;
 }
 
 .icons {
@@ -205,7 +206,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 25px;
-  background-color:yellow;
+  background-color:green;
 }
 .edit-delete{
   /* border: 1px solid transparent;
@@ -247,7 +248,7 @@ body {
   border-radius: 5px;
   font-weight: bold;
   color: white;
-  font-size: 14px;
+  font-size: 18px;
   text-transform: uppercase;
 
 
@@ -284,10 +285,10 @@ body {
 .popup {
   display: none;
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
+  background: green;
   padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -323,6 +324,9 @@ body {
 
 .popup-buttons {
   text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .popup-buttons button {
@@ -333,7 +337,7 @@ body {
   border: 1px solid transparent;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   border-radius: 4px;
 }
 

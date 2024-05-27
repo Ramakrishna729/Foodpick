@@ -10,6 +10,7 @@
       src="https://kit.fontawesome.com/92d70a2fd8.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <title>Document</title>
 
@@ -164,10 +165,30 @@
           <div class="error" id="expiryDateError"></div>
           <br />
         </div>
-        <button type="button" id="proceedButton">Proceed</button>
+        <button type="button" id="proceedButton">Payment Confirm</button>
       </form>
     </div>
   </div>
+
+
+<!-- Payment Confirmation -->
+
+<!-- <div id="confirmationPopup" class="confirmation-popup">
+  <div class="confirmation-popup">
+      <span class="close">&times;</span>
+      <h2>Order Confirmation</h2>
+      <p>Name: Ramakrishna</p>
+      <p>Address: 7/72 Foodpick(street), Rajajinagar, Bangalore, 515305</p>
+      <h3>Cart Items</h3>
+      <ul id="cartItems"></ul>
+      <h3>Thank You</h3>
+      <button id="downloadButton">Download PDF</button>
+  </div>
+</div> -->
+
+
+
+
   <!-- about continer -->
   <div class="container" id="about-container" style="display: none; background-color: white;">
       <h1 style="color: orange">GET TO KNOW US</h1>
@@ -244,7 +265,7 @@
     </div>
     <!-- buy button information -->
     <!--  Footer Section-->
-    <div style = "display:block">
+    <!-- <div style = "display:inline-block">
      <footer class="footer">
         <div class="footer-container">
           <div class="footer-section">
@@ -273,7 +294,7 @@
           </div>
         </div>
       </footer>
-    </div>
+    </div> -->
     <script src="user.js"></script>
   </body>
 </html>

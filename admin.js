@@ -1,41 +1,41 @@
 const PreFilledproducts = [
-  {
-    id: "rec43w3ipXvP28vog",
-
-    title: "EGG RECEIPES",
-    item: "BREAK-FAST",
-    image:
-      "https://www.thespruceeats.com/thmb/JFS7y27Wr6QpgCScNroTe0y0jmo=/450x300/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SES-copycat-first-watch-million-dollar-harvest-hash-recipe-7853520-hero-01-5f90e986d2124132bee79a0466621a0b.jpg",
-    price: 100,
-  },
-  {
-    id: "rec4f2RIftFCb7aHh",
-
-    title: "PANCAKES",
-    item: "BREAK-FAST",
-    image:
-      "https://www.thespruceeats.com/thmb/7VYBqe5J6iK7UjtWumccJzn8F0s=/450x300/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SES-uttapam-recipe-7559216-hero-01-d8e7d9ee2986484e81891415a0ba9677.jpg",
-    price: 200,
-  },
   // {
-  //   id: "rec8kkCmSiMkbkiko",
+  //   id: "rec43w3ipXvP28vog",
 
-  //   title: " FRENCH TOAST",
-  //   item: "BREAK-FAST",
+  //   title: "Egg Recipes",
+  //   item: "Break-Fast",
   //   image:
-  //     "https://www.thespruceeats.com/thmb/_23_8p1ywoqf00WwFcr__xTE25I=/300x225/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SES-cap-n-crunch-french-toast-recipe-7104864-hero-01-acc699ef537846d8a8c864e52f0080fd.jpg",
-  //   price: 300,
+  //     "https://www.thespruceeats.com/thmb/JFS7y27Wr6QpgCScNroTe0y0jmo=/450x300/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SES-copycat-first-watch-million-dollar-harvest-hash-recipe-7853520-hero-01-5f90e986d2124132bee79a0466621a0b.jpg",
+  //   price: 100,
   // },
   // {
-  //   id: "recBohCqQsot4Q4II",
+  //   id: "rec4f2RIftFCb7aHh",
 
-  //   title: "CLASSIC BANH",
-  //   item: "LUNCH",
+  //   title: "Pancake",
+  //   item: "Break-fast",
   //   image:
-  //     "https://www.thespruceeats.com/thmb/WlY2q3hiZStxcnGeQBUPKy-vDqY=/300x225/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/classic-banh-mi-4844177-hero-01-236ece4af179446888909d052ef61016.jpg",
-
-  //   price: 400,
+  //     "https://www.thespruceeats.com/thmb/7VYBqe5J6iK7UjtWumccJzn8F0s=/450x300/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SES-uttapam-recipe-7559216-hero-01-d8e7d9ee2986484e81891415a0ba9677.jpg",
+  //   price: 200,
   // },
+  {
+    id: "rec8kkCmSiMkbkiko",
+
+    title: " FRENCH TOAST",
+    item: "BREAK-FAST",
+    image:
+      "https://www.thespruceeats.com/thmb/_23_8p1ywoqf00WwFcr__xTE25I=/300x225/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/SES-cap-n-crunch-french-toast-recipe-7104864-hero-01-acc699ef537846d8a8c864e52f0080fd.jpg",
+    price: 300,
+  },
+  {
+    id: "recBohCqQsot4Q4II",
+
+    title: "CLASSIC BANH",
+    item: "LUNCH",
+    image:
+      "https://www.thespruceeats.com/thmb/WlY2q3hiZStxcnGeQBUPKy-vDqY=/300x225/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/classic-banh-mi-4844177-hero-01-236ece4af179446888909d052ef61016.jpg",
+
+    price: 400,
+  },
   {
     id: "recDG1JRZnbpRHpoy",
 
@@ -257,10 +257,10 @@ function isValidProductDetails({ item, title, imageInput, price }) {
 }
 
 function saveProduct() {
-  const title = document.getElementById("productTitle").value.toUpperCase();
+  const title = document.getElementById("productTitle").value.toUpperCase()
   const imageInput = document.getElementById("productImage");
-  const item = document.getElementById("productItem").value.toUpperCase();
-  const price = document.getElementById("productPrice").value;
+  const item = document.getElementById("productItem").value.toUpperCase()
+  const price = document.getElementById("productPrice").value.toUpperCase();
 
   const isValid = isValidProductDetails({ title, imageInput, item, price });
 
@@ -322,8 +322,8 @@ function renderProducts(itemid) {
             
         </div>    
             <div class="edit-delete" style = "display:flex;flex-direction:row;justify-content:end;align-items:end;color:white;background-color:black;">
-                <button  style = "color:white;background-color:black;" onclick="editProduct(${index})" >Edit</button>
-                <button onclick="deleteProduct(${index})"style = "color:white;background-color:black;">Delete</button>
+                <button  style = "color:red;background-color:black;" onclick="editProduct(${index})" >Edit</button>
+                <button style = "color:white;background-color:red;" onclick="deleteProduct(${index})">Delete</button>
 
             </div>
         `;

@@ -15,7 +15,7 @@ document.getElementById('root').innerHTML = categories.map((items)=>
         <div class='bottom'>
         <p style = "margin-top:1px;">${item}</p>
         <p style = "color:orange">${title}</p>
-        <h2>$ ${price}.00</h2>`+
+        <h2>Price:$ ${price}.00</h2>`+
         "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"+
         `</div>
         </div>`
@@ -204,6 +204,12 @@ function showPayment(){
     document.getElementById("paymentPopup").style.display = "block"
 
 }
+
+
+// download confirmation
+
+
+
 
 
     
