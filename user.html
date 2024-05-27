@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -67,7 +68,7 @@
             color: black;
             position: absolute;
             right: 120px;
-            top: 6px;
+            top: 15px;
             font-size: 20px;
           "
           onclick="userIcon()"
@@ -75,7 +76,7 @@
       </a>
       <div class="cart">
         <i class="fa-solid fa-cart-shopping"></i>
-        <p id="count" id="showPopup">0</p>
+        <p id="count" id="showPopup" style = "background-color: black;color:white;width:25px;height:16px;border-radius: 50%;">0</p>
       </div>
     </div>
     <!-- nav bar -->
@@ -173,18 +174,29 @@
 
 <!-- Payment Confirmation -->
 
-<!-- <div id="confirmationPopup" class="confirmation-popup">
-  <div class="confirmation-popup">
+<div style="display: none;
+ position: fixed;
+  top: 50%;
+  left: 50%;
+  transform:translate(-70%,-70%);
+  width: 400px;
+  height:400px;
+  padding:10px;
+  border: 1px solid transparent;
+  background-color:orange"  id = "confirmationPopup">
+    <div >
       <span class="close">&times;</span>
-      <h2>Order Confirmation</h2>
-      <p>Name: Ramakrishna</p>
-      <p>Address: 7/72 Foodpick(street), Rajajinagar, Bangalore, 515305</p>
-      <h3>Cart Items</h3>
-      <ul id="cartItems"></ul>
-      <h3>Thank You</h3>
-      <button id="downloadButton">Download PDF</button>
-  </div>
-</div> -->
+        <h2>Order Confirmation</h2>
+        <p>Name: Ramakrishna</p>
+        <p>Address: 7/72 Foodpick(street), Rajajinagar, Bangalore, 515305</p>
+        <h3>Cart Items</h3>
+        <ul id="cartItems">
+
+        </ul>
+        <h3>Thank You</h3>
+        <button id="downloadButton">Download PDF</button>
+    </div>
+</div>
 
 
 
@@ -264,8 +276,8 @@
       </div>
     </div>
     <!-- buy button information -->
-    <!--  Footer Section-->
-    <!-- <div style = "display:inline-block">
+    
+     <div>
      <footer class="footer">
         <div class="footer-container">
           <div class="footer-section">
@@ -294,7 +306,8 @@
           </div>
         </div>
       </footer>
-    </div> -->
+    </div>
+  
     <script src="user.js"></script>
   </body>
 </html>

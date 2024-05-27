@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     document.getElementById("buyButton").addEventListener("click",showPayment)
+     
 
  })
 
@@ -121,6 +122,17 @@ document.getElementById("about-container").addEventListener("click",function(){
 document.getElementById("recipes").addEventListener("click",function(){
     location.reload();
 })
+
+document.getElementById("proceedButton").addEventListener("click",confirmationPopup)
+ function confirmationPopup(){
+    document.getElementById("paymentPopup").style.display = "none"
+    document.getElementById("confirmationPopup").style.display = "block"
+ }
+
+
+
+
+
 
 // document.getElementById('showPopup').addEventListener('click', function() {
 //     document.getElementById('popupContainer').classList.add('active');
@@ -206,7 +218,57 @@ function showPayment(){
 }
 
 
-// download confirmation
+//  confirmation popup
+
+
+
+
+
+
+ const products1 = JSON.parse(localStorage.getItem('products')) || [];
+ const cartItemsElement = document.getElementById('cartItems');
+ cartItemsElement.innerHTML = '';
+
+ products1.forEach(product => {
+     const li = document.createElement('li');
+     li.textContent = `${product.name} - $${product.price}`;
+     cartItemsElement.appendChild(li);
+ });
+// }
+// });
+
+document.getElementById('downloadButton').addEventListener('click', function() {
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+
+doc.text('Order Confirmation', 10, 10);
+doc.text('Name: Ramakrishna', 10, 20);
+doc.text('Address: 7/72 Foodpick(street), Rajajinagar, Bangalore, 515305', 10, 30);
+
+const products1 = JSON.parse(localStorage.getItem('products')) || [];
+let yPosition = 40;
+products1.forEach(product => {
+ doc.text(`${product.name} - $${product.price}`, 10, yPosition);
+ yPosition += 10;
+});
+
+doc.save('order_confirmation.pdf');
+});
+
+// Example of setting product data in local storage
+localStorage.setItem('products', JSON.stringify([
+{ id: 1, name: 'Product 1', price: 100 },
+{ id: 2, name: 'Product 2', price: 200 }
+]));
+
+
+
+
+
+ 
+
+
+
 
 
 

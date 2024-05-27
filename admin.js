@@ -153,6 +153,11 @@ document.addEventListener("DOMContentLoaded", () => {
     productContainer.style.display = "none";
     aboutContainer.style.display = "block";
   });
+
+  // document.getElementById("productPopup").addEventListener("click",function(){
+  //   document.getElementById("product-item").style.display = ""
+
+  // })
   document
     .getElementById("addProductBtn")
     .addEventListener("click", function () {
@@ -160,6 +165,11 @@ document.addEventListener("DOMContentLoaded", () => {
       aboutContainer.style.display = "none";
       adminBtnContainer.style.display = "block";
     });
+
+    document.getElementById("addProductBtn").addEventListener("click",function(){
+      document.getElementsById("productPopup").style.display = "block "
+      document.getElementsById("footer").style.visibility =  "hidden"
+    })
 });
 
 // add btn information
