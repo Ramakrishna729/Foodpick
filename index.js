@@ -261,7 +261,7 @@ function showRegister() {
     
     if (!/^[6-9]\d{9}$/.test(reg_phoneNumber)) {
       showErr(
-        "Phone number must start with 6-9 and contain 10 digits.",
+        "Phone number must start with 8-9 and contain 10 digits.",
         "phone_err"
       );
       return false;
