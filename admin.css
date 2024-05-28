@@ -29,13 +29,18 @@ body {
 .header-right {
   display: flex;
   align-items: center;
+  position:absolute;
+  right:80px;
 }
 
-.header-right .icon {
-  margin-left: 20px;
+ .header-right .icon {
+  margin-left: 10px;
   text-decoration: none;
-  color: white;
-}
+  color:black;
+  font-size: 18px;
+  font-weight:bold;
+
+} 
 
 /* receipe Nav Bar */
 

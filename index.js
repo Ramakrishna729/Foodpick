@@ -8,6 +8,11 @@ function showRegister() {
     document.getElementById("LoginContainer").style.display = "block";
   }
 
+  function loginClear(){
+    document.getElementById("phone_err").value = ""
+    document.getElementById("login_err").value = ""
+  }
+
 
   function showErr(message, elemntID) {
     let elemnt = document.getElementById(elemntID);
@@ -136,7 +141,7 @@ function showRegister() {
    
     if (!/^[8-9]\d{9}$/.test(reg_phoneNumber)) {
       showErr(
-        "Phone number must start with 8-9 and contain 10 digits.",
+        "Phone number must start with 8&9 and contain 10 digits.",
         "RegPhone_err"
       );
       return false;
@@ -154,7 +159,7 @@ function showRegister() {
       return true;
     } else {
       showErr(
-        "Please enter a valid email address (e.g., username@gmail.com).",
+        "Please enter a valid email address (username@gmail.com).",
         "RegEmai_err"
       );
       return false;

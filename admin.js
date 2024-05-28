@@ -331,7 +331,7 @@ function renderProducts(itemid) {
                 <div>
                 <p style = "text-transform:uppercase;font-weight:bold;color:block">${product.item}</p>
                 <p style = "text-transform:uppercase;font-weight:bold;color:orange">${product.title}</p>
-                <p style = "text-transform:uppercase;font-weight:bold;color:red">Price: $${product.price}</p>
+                <p style = "text-transform:uppercase;font-weight:bold;color:red">Price:&#8377${product.price}</p>
                 </div>   
                 
             
@@ -363,8 +363,8 @@ function deleteProduct(id) {
 
 renderProducts();
 
-function adminIcon() {
-  let adminLogo = document.getElementById("admin-icon");
+function adminLogout() {
+  let adminLogo = document.getElementById("adminLogout");
   adminLogo.addEventListener("click", () => {
     location.href = "index.html";
   });
@@ -399,7 +399,7 @@ function te(obj, index) {
                 <div>
                 <p style = "text-transform:uppercase;font-weight:bold;color:block">${product.item}</p>
                 <p style = "text-transform:uppercase;font-weight:bold;color:orange">${product.title}</p>
-                <p style = "text-transform:uppercase;font-weight:bold;color:red">Price: $${product.price}</p>
+                <p style = "text-transform:uppercase;font-weight:bold;color:red">Price:&#8377${product.price}</p>
                 </div>   
                 
             

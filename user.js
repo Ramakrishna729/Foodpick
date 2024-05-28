@@ -81,13 +81,26 @@ function displaycart(){
     
 }
 
-function userIcon(){
-    document.getElementById("userIcon").addEventListener("click",function(){
+function userLogout(){
+    document.getElementById("userLogout").addEventListener("click",function(){
         location.href = "index.html"
 
     })
 }
 
+// document.getElementById("popupContainerside").addEventListener("click",function(){
+   
+// })
+
+function popupContainerside(){
+   
+    document.getElementById("popupContainerside").style.display = "none"
+}
+
+function confirmationPopup(){
+    document.getElementById("confirmationPopup").style.display = "none"
+    
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     let rootItem = document.getElementById("root")
