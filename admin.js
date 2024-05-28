@@ -101,6 +101,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const adminBtnContainer = document.getElementById("admin-btn-container");
   const filterLinks = document.querySelectorAll(".dropdown-content a");
 
+
+  // envelope Message
+
+ 
+
   function displayProducts(filteredProducts) {
     productContainer.innerHTML = "";
     filteredProducts.forEach((product, index) => {
@@ -406,3 +411,18 @@ function te(obj, index) {
 
   body.appendChild(productItem);
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const envelope = document.getElementById('envelope');
+  const message = localStorage.getItem('paymentConfirmationMessage');
+
+  if (message) {
+      envelope.textContent = message;
+      //  Optionally, remove the message from localStorage after displaying it
+      //  localStorage.removeItem('paymentConfirmationMessage');
+  } 
+  // else {
+  //     envelope.textContent = '0';
+  // }
+});

@@ -267,7 +267,10 @@ function downloadpdf (){
 //  confirmation popup
 
 
-
+document.getElementById('proceedButton').addEventListener('click', function() {
+    localStorage.setItem('paymentConfirmationMessage', 1);
+    alert('Payment confirmation sent.');
+});
 
 
 
