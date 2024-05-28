@@ -241,14 +241,22 @@ function downloadpdf (){
         
         doc.text('Order Confirmation', 10, 10);
         doc.text('Name: Ramakrishna', 10, 20);
-        doc.text('Address: 7/72 Foodpick(street), Rajajinagar, Bangalore, 515305', 10, 30);
+        doc.text('Address: ',10,40);
+        doc.text('7/72 Foodpick(street)',10,50);
+        doc.text('Rajajinagar',10,60);
+        doc.text('Bangalore',10,70)
+        doc.text("515305",10,80);
         
 
-         let yPosition = 40;
+        let yPosition = 90;
         cart.forEach(product => {
-         doc.text(`${product.itme}`, 10, yPosition);
-         yPosition += 10;
+        doc.text(`${product.item} :${product.title} :${product.price}:${product.qty}`, 70, yPosition);
+        yPosition += 10;
         });
+
+        
+        doc.text("Thank you for visiting ",10,100)
+
         
         doc.save('order_confirmation.pdf');
 
@@ -262,25 +270,15 @@ function downloadpdf (){
 
 
 
-//  const products1 = JSON.parse(localStorage.getItem('products')) || [];
-//  const cartItemsElement = document.getElementById('cartItems');
-//  cartItemsElement.innerHTML = '';
 
-//  products1.forEach(product => {
-//      const li = document.createElement('li');
-//      li.textContent = `${product.name} - $${product.price}`;
-//      cartItemsElement.appendChild(li);
-//  });
-// }
-// });
 
 
 
 // Example of setting product data in local storage
-localStorage.setItem('products', JSON.stringify([
-{ id: 1, name: 'Product 1', price: 100 },
-{ id: 2, name: 'Product 2', price: 200 }
-]));
+// localStorage.setItem('products', JSON.stringify([
+// { id: 1, name: 'Product 1', price: 100 },
+// { id: 2, name: 'Product 2', price: 200 }
+// ]));
 
 
 
