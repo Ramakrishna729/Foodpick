@@ -250,7 +250,8 @@ function downloadpdf (){
 
         let yPosition = 90;
         cart.forEach(product => {
-        doc.text(`${product.item} :${product.title} :${product.price}:${product.qty}`, 70, yPosition);
+
+        doc.text(`${product.item}:${product.title}: Price:${product.price}: Qty:${product.qty}`, 70, yPosition);
         yPosition += 10;
         });
 
