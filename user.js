@@ -251,7 +251,7 @@ function downloadpdf (){
         let yPosition = 90;
         cart.forEach(product => {
 
-        doc.text(`${product.item}:${product.title}: Price:${product.price}: Qty:${product.qty}`, 70, yPosition);
+        doc.text(`${product.item}:  ${product.title}:  Price:${product.price}:  Qty:${product.qty}`, 70, yPosition);
         yPosition += 10;
         });
 
@@ -260,6 +260,7 @@ function downloadpdf (){
 
         
         doc.save('order_confirmation.pdf');
+        location.reload()
 
 }
 
@@ -269,7 +270,7 @@ function downloadpdf (){
 
 document.getElementById('proceedButton').addEventListener('click', function() {
     localStorage.setItem('paymentConfirmationMessage', 1);
-    alert('Payment confirmation sent.');
+    // alert('Payment confirmation sent.');
 });
 
 

@@ -342,8 +342,10 @@ function renderProducts(itemid) {
 
             </div>
         `;
+      
     productList.appendChild(productItem);
   });
+ 
 }
 
 function editProduct(index) {
@@ -410,6 +412,7 @@ function te(obj, index) {
   // productList.appendChild(productItem);
 
   body.appendChild(productItem);
+  
 }
 
 
@@ -420,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (message) {
       envelope.textContent = message;
       //  Optionally, remove the message from localStorage after displaying it
-      //  localStorage.removeItem('paymentConfirmationMessage');
+       localStorage.removeItem('paymentConfirmationMessage');
   } 
   // else {
   //     envelope.textContent = '0';
