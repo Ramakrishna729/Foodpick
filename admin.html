@@ -19,15 +19,31 @@
         </div>
     <div class="header-left">
 
-        <a class="header-brand" href="#">FOODPICK</a>
+        <a class="header-brand" href="#" style = "color: black;font-weight: bold;">FOODPICK</a>
     </div>
     <div class="header-right">
-        <a href="#" class="icon"> <i class="fa-solid fa-envelope" id = "envelope" style = "color:black;background-color:transparent;font-size:16px;font-weight: bold;position:absolute;right:40px;bottom:1px;"></i> </a>
-        <a href="#" class="icon" id = "admin-icon"> <i class="fa-solid fa-user"></i> </a>
-        <!-- <a href="#" class="icon" id = "admin-logout" >Logout</a> -->
+    <a href="#" class="icon"> <i class="fa-solid fa-envelope" id = "envelope" style = "color:black;background-color:transparent;font-size:16px;font-weight: bold;position:absolute;right:40px;bottom:1px;"></i> </a>
+    <div>
+    <a href="#" class="icon" onclick="showProfile()" > <i class="fa-solid fa-user" id = "admin-icon" ></i> </a>
     </div>
-    <div  onclick="adminLogout()" id = "adminLogout" style ="margin-bottom:20px;" ><a style = "position: absolute;right:10px;">Logout</a></div>
-    </nav>
+    </div>
+    <div>
+       
+    <div  onclick="adminLogout()" id = "adminLogout" style ="margin-bottom:20px;" ><a style = "position: absolute;right:10px;cursor:pointer;font-weight:bold;">Logout</a></div>
+    </div>
+</nav>
+<!-- <div id="admin-info" class="admin-info">
+    <p><span id="admin-name"></span></p>
+    <p><span id="admin-email"></span></p>
+    <p><span id="admin-phone"></span></p>
+</div> -->
+
+  <!-- <a href="#" class="icon" id = "admin-logout" >Logout</a>  -->
+  <!-- <div class="float-right user-detail" onclick="showProfile()">
+    <i class= "fa-solid fa-user"></i>
+  </div> --> 
+  
+    
 
     <div class="navbarContainer">
     <div class="recipes">
@@ -54,6 +70,24 @@
     </div>
     </div>
     <div class="line"><hr /></div>
+
+
+    <!-- <div class="float-right user-detail" onclick="showProfile()">
+        <i class= "fa-solid fa-user  profile"></i>
+      </div>
+      <div class="displayprofile" id="displayprofile">
+        <button class="containerclsoeBtn" onclick="closeProfile()">
+          X
+        </button>
+        <div class="content">
+          <div id="userNameDisplay">Admin</div>
+          <div id="userEmailID">admin@gmail.com</div>
+          <div id="userMobile">8639362024</div>
+           <div class="float-right">
+            <!- <button class="btn" onclick="adminLogout()">Logout</button> -->
+          <!-- </div>  -->
+        <!-- </div> --> 
+
     
         <!-- <button class = "adminBtn">Add Item</button> -->
         <div class="admin-btn-container">
@@ -82,8 +116,8 @@
             <div class="validation-message" id="priceValidation"></div>
     
             <div class="popup-buttons">
-                <button id="saveProductBtn">Update Item</button>
-                <button id="closePopupBtn">Close</button>
+                <button id="saveProductBtn">Add Item</button>
+                <button id="closePopupBtn">X</button>
             </div>
         </div>
 

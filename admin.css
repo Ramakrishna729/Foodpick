@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: orange;
+  background-color: white;
   padding: 10px 20px;
   margin-bottom: 10px;
 }
@@ -108,7 +108,7 @@ body {
   display: flex;
   color: grey;
   letter-spacing: 25px;
-  margin-left: 1000px;
+  margin-left: 1100px;
 }
 .line {
   margin-top: 15px;
@@ -211,7 +211,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 25px;
-  background-color:green;
+  background-color:white;
 }
 .edit-delete{
   /* border: 1px solid transparent;
@@ -275,7 +275,7 @@ body {
 .add-product-btn{
   position: absolute;
   right:3px;
-  top:110px;
+  top:120px;
   padding:5px;
   border-radius:5px;
   background-color: orange;
@@ -283,6 +283,7 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   color:white;
+  
 
 
 }
@@ -293,12 +294,13 @@ body {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: green;
+  background: orange;
   padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   width: 300px;
+  height:380px;
  
 }
 
@@ -314,9 +316,10 @@ body {
   margin: 10px 0;
   padding: 10px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
+  border: none;
+  outline:none;
   border-radius: 5px;
-  background-color: orange;
+  background-color: white;
   color:black;
   font-size: 20px;
 }
@@ -337,7 +340,7 @@ body {
 .popup-buttons button {
   padding: 10px 20px;
   margin-left: 10px;
-  background-color: orange;
+  background-color: transparent;
   color: white;
   border: 1px solid transparent;
   text-transform: uppercase;
@@ -361,6 +364,16 @@ body {
    flex-direction: column; 
   justify-content: space-around;
   align-items: start;
+  }
+
+  #saveProductBtn{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color:white;
+    color:black;
+    border:1px solid transparent;
+
   }
 
 .product-item img {
@@ -416,4 +429,67 @@ body {
   transform: translate(-50%,-50%);
   background-color: white;
 }
+
+/* modification */
+ #closePopupBtn{
+  position: absolute;
+  top:10px;
+  right:10px;
+  color:red;
+  border-radius: 50%;
+} 
+
+.admin-info{
+  position: absolute;
+  display: block;
+  top:50px;
+  right:30px;
+  width:120px;
+  height:100px;
+  background-color:black;
+  color:white;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index:10
+}
+.admin-info:hover{
+  display: block;
+} */
+
+ /* .displayprofile{
+  position:absolute;
+  display: none;
+  top:30px;
+  right:30px;
+  z-index: 10px;
+  border:1px solid;
+  width:4%;
+  height:4%;
+
+}  */
+
+ .displayprofile {
+  display: none;
+  border-radius: 10px;
+  position: fixed;
+  top: 40px;
+  right: 35px;
+  width: 250px;
+  background-color: rgba(16, 16, 16, 0.9);
+}
+.profile:hover .displayprofile {
+  display: block; 
+} 
+
+.displayprofile .content {
+  /* background-color: green; */
+  width: 200px;
+  margin: 30px;
+  color: white;
+} 
+
+
+
+
+
 

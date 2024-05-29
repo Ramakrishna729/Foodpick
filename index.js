@@ -25,6 +25,21 @@ function showRegister() {
     elemnt.innerHTML = "";
     elemnt.style.visibility = "hidden";
   }
+
+  function resetRegister() {
+    debugger;
+    let reg_name = (document.getElementById("RegName").value = "");
+    let reg_email = (document.getElementById("RegEmail").value = "");
+    let reg_phoneNumber = (document.getElementById("RegPhoneNumber").value = "");
+    let reg_password = (document.getElementById("RegPassword").value = "");
+    let reg_crmPwd = (document.getElementById("RegConfirmPassword").value = "");
+    //Err elements
+    document.getElementById("RegName_err").style.visibility = "hidden";
+    document.getElementById("RegEmai_err").style.visibility = "hidden";
+    document.getElementById("RegPhone_err").style.visibility = "hidden";
+    document.getElementById("RegPwd_err").style.visibility = "hidden";
+    document.getElementById("RegCrfmPwd_err").style.visibility = "hidden";
+  }
   
   function registerBtn() {
     try {

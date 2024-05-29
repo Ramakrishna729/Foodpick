@@ -63,17 +63,17 @@
             </button>
             <div class="register-link">
               <p>
-                New User Click Here
+                Do you have an account?
                 <span onclick="showRegister()"
                   ><a href="#" class="icon">
                     <i
                       class="fa-solid fa-user"
-                      style="cursor: pointer; color: orange; font-size: 20px"
+                      style="cursor: pointer; color: orange; font-size: 25px;font-weight:bold;"
                     ></i> </a
                 ></span>
               </p>
               <div >
-                <button onclick = "loginClear()">Clear</button>
+                <!-- <button onclick = "loginClear()">Clear</button> -->
                 </div>
             </div>
            
@@ -143,6 +143,15 @@
             >
               Register
             </button>
+            <button
+            class="btn"
+            id="register_btn"
+            onclick="resetRegister()"
+            style="background-color: orange;position:absolute;bottom: 2px;width:30%;left:60%;"
+            
+          >
+            Reset
+          </button>
           </div>
         </div>
       </div>

@@ -11,6 +11,8 @@
       src="https://kit.fontawesome.com/92d70a2fd8.js"
       crossorigin="anonymous"
     ></script>
+    <script src="
+https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
     <title>Document</title>
@@ -51,7 +53,7 @@
         display: flex;
         color: grey;
         letter-spacing: 25px;
-        margin-left: 1000px;
+        margin-left: 1100px;
       }
       .line {
         margin-top: 15px;
@@ -62,7 +64,7 @@
     <div class="header">
       <div> <img src = "https://logo.com/image-cdn/images/kts928pd/production/11e5681ac3b77c52480a1748abb1950ba40e4884-357x358.png?w=1080&q=72" style = "width:80px;height:35px; border-radius:10px;margin-left:10px;">
       </div>
-      <p class="logo" style = "margin-left:300px;">FOODPICK</p>
+      <p class="logo" style = "margin-left:300px;color:black;font-weight: bold;">FOODPICK</p>
       <a href="#" class="userIcon" id="userIcon"
         ><i
           class="fa-solid fa-user"
@@ -74,7 +76,7 @@
             font-size: 20px;
           "></i>
       </a>
-      <div  onclick="userLogout()" id = "userLogout" style ="margin-bottom:20px;" ><a style = "position: absolute;right:130px;">Logout</a></div>
+      <div  onclick="userLogout()" id = "userLogout" style ="margin-bottom:20px;" ><a style = "position: absolute;right:130px;cursor: pointer; font-weight:bold;">Logout</a></div>
       <div class="cart">
         <i class="fa-solid fa-cart-shopping" id="count" id="showPopup" style = "color:black;width:25px;height:16px;border-radius: 50%;margin-left:20px;"></i>
         
@@ -110,7 +112,7 @@
           <div id="cartItem">Your cart is empty</div>
           <div class="foot" id = "cartfoot">
             <h3>Total</h3>
-            <h2 id="total">$ 0.00</h2>
+            <h2 id="total">Rs. 0.00</h2>
             <!-- buy button information -->
             <div class = "buy-button-container">
             <button id = "buyButton" class="buy-button">Buy</button>
@@ -312,6 +314,33 @@
           </div>
         </div>
       </footer>
+    </div>
+
+    <div style="text-align: center; position:fixed;top:10px;left:10px;background-color:white;display:none;;width:400px;height:400px;color:black" id = "pdfDiv">
+      <div id="sts" style="text-align: center;width:400px;height:400px;">
+      <h1 style="text-align: center;">FoodPic</h1>
+      <h6 style="text-align: center;">Enjoy the every bite</h1>
+      <table style="margin-left: auto;margin-right: auto;" id = 'pdfTable'>
+          <tr>
+              <td>item</td>
+              <td>qty</td>
+              <td>Price</td>
+          </tr>
+          <tr>
+              <td>chaoati</td>
+              <td>1</td>
+              <td>12</td>
+          </tr>
+          <tr>
+              <td>chaoati2</td>
+              <td>1</td>
+              <td>12</td>
+          </tr>
+      </table>
+      <p>Grand Total <span id ="pdfGrandTotal">1223</span></p>
+  
+      <h1>Thank you for order</h1>
+    </div>
     </div>
   
     <script src="user.js"></script>

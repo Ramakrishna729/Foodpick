@@ -90,6 +90,18 @@ let products = localStorage.getItem("allProducts")
 
 console.log(products);
 
+
+
+// function adminInfo(){
+//   document.getElementById("admin-name").innerHTML = "Admin" 
+//   document.getElementById("admin-email").innerHTML= "Admin@gmail.com"
+//   document.getElementById("admin-phone").innerHTML = "8639362024"
+// }
+// document.getElementById('admin-icon').addEventListener("click",adminInfo)
+
+
+let rupeeSymbol = "&#8377"
+
 function showRecipe() {
   document.getElementById("recipeContainer").style.display = "";
   document.getElementById("aboutContainer").style.display = "block ";
@@ -101,23 +113,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const adminBtnContainer = document.getElementById("admin-btn-container");
   const filterLinks = document.querySelectorAll(".dropdown-content a");
 
-
+  
   // envelope Message
 
  
 
   function displayProducts(filteredProducts) {
+    // let rupeeSymbol = "&#8377"
     productContainer.innerHTML = "";
     filteredProducts.forEach((product, index) => {
       const productElement = document.createElement("div");
       productElement.className = "product";
       productElement.dataset.itemid = product.id;
-
+     
       productElement.innerHTML = `
           <img src="${product.image}" alt="${product.title}">
           <h3 style = "color:black">${product.item}</h3>
           <h3 style = "color:orange">${product.title}</h3>
-          <h3 style = "color:red">PRICE: $ ${product.price}.00</h3>
+          <h3 style = "color:red">PRICE:₹ ${product.price}.00</h3>
         `;
       productContainer.appendChild(productElement);
       productElement.addEventListener("click", (event) => {
@@ -132,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     productContainer.style.marginTop = "0px;";
     aboutContainer.style.display = "none";
     adminBtnContainer.style.display = "none";
+  
 
     if (filter === "all") {
       displayProducts(products);
@@ -199,7 +213,9 @@ let currentEditingProductIndex = null;
 function showPopup(product = null, index = null) {
   const popup = document.getElementById("productPopup");
   popup.classList.add("active");
+  popup.classList.add("close")
 
+  document.getElementsByClassName("close").value = "X";
   document.getElementById("productTitle").value = product ? product.title : "";
   document.getElementById("productImage").value = "";
   const categorySel = document.getElementById("productItem");
@@ -234,11 +250,18 @@ function closePopup() {
 function isValidProductDetails({ item, title, imageInput, price }) {
   let isValid = true;
 
+  let res=products.filter(item=>item.title.toUpperCase()===title.toUpperCase())
+  if(res.length>=1){
+    document.getElementById("titleValidation").innerText = "item alredy exits";
+      document.getElementById("titleValidation").style.display = "block";
+    return false;
+  }
+
+
   if (!title) {
-    // check if title is empty
     isValid = false;
-    document.getElementById("titleValidation").innerText = "Title is required";
-    document.getElementById("titleValidation").style.display = "block";
+      document.getElementById("titleValidation").innerText = "Title is required";
+      document.getElementById("titleValidation").style.display = "block";
   } else {
     document.getElementById("titleValidation").style.display = "none";
   }
@@ -272,6 +295,7 @@ function isValidProductDetails({ item, title, imageInput, price }) {
 }
 
 function saveProduct() {
+  debugger
   const title = document.getElementById("productTitle").value.toUpperCase()
   const imageInput = document.getElementById("productImage");
   const item = document.getElementById("productItem").value.toUpperCase()
@@ -331,14 +355,14 @@ function renderProducts(itemid) {
                 <div>
                 <p style = "text-transform:uppercase;font-weight:bold;color:block">${product.item}</p>
                 <p style = "text-transform:uppercase;font-weight:bold;color:orange">${product.title}</p>
-                <p style = "text-transform:uppercase;font-weight:bold;color:red">Price:&#8377${product.price}</p>
+                <p style = "text-transform:uppercase;font-weight:bold;color:red">Price:₹ ${product.price}</p>
                 </div>   
                 
             
         </div>    
-            <div class="edit-delete" style = "display:flex;flex-direction:row;justify-content:end;align-items:end;color:white;background-color:black;">
-                <button  style = "color:red;background-color:black;" onclick="editProduct(${index})" >Edit</button>
-                <button style = "color:white;background-color:red;" onclick="deleteProduct(${index})">Delete</button>
+            <div class="edit-delete" style = "display:flex;flex-direction:row;justify-content:end;align-items:end;">
+                <button  style = "color:white;background-color:black;" onclick="editProduct(${index})" >Edit</button>
+                <button style = "color:white;background-color:black;" onclick="deleteProduct(${index})">Delete</button>
 
             </div>
         `;
@@ -370,6 +394,15 @@ function adminLogout() {
   });
 }
 
+// function showProfile() {
+//   document.getElementById("displayprofile").style.display = "block";
+//   document.getElementById("displayprofile").style.zIndex = 10;
+// }
+
+// function closeProfile() {
+//   document.getElementById("displayprofile").style.display = "none";
+// }
+
 // document.getElementById("admin-icon").addEventListener("click",mouseOver)
 
 // function mouseOver(){
@@ -399,7 +432,7 @@ function te(obj, index) {
                 <div>
                 <p style = "text-transform:uppercase;font-weight:bold;color:block">${product.item}</p>
                 <p style = "text-transform:uppercase;font-weight:bold;color:orange">${product.title}</p>
-                <p style = "text-transform:uppercase;font-weight:bold;color:red">Price:&#8377${product.price}</p>
+                <p style = "text-transform:uppercase;font-weight:bold;color:red">Price:₹ ${product.price}</p>
                 </div>   
                 
             
@@ -429,3 +462,13 @@ document.addEventListener('DOMContentLoaded', function() {
   //     envelope.textContent = '0';
   // }
 });
+
+
+function showProfile() {
+  document.getElementById("displayprofile").style.display = "block";
+  document.getElementById("displayprofile").style.zIndex = 10;
+}
+
+function closeProfile() {
+  document.getElementById("displayprofile").style.display = "none";
+}
