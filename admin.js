@@ -451,7 +451,7 @@ function te(obj, index) {
 
 document.addEventListener('DOMContentLoaded', function() {
   const envelope = document.getElementById('envelope');
-  const message = localStorage.getItem('paymentConfirmationMessage');
+  const message = localStorage.getItem('cart');
 
   if (message) {
       envelope.textContent = message;

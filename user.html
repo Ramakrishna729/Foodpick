@@ -58,14 +58,56 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
       .line {
         margin-top: 15px;
       }
+
+      .admin-icon-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 5px;
+            margin-left: 400px;
+             /* background-color: #333;  */
+            padding: 10px;
+        }
+        .admin-icon-container .admin-icon {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .admin-icon-container .admin-icon img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .admin-details {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            right:30px;
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 200px;
+            z-index: 4;
+            font-weight: bold;
+        }
+        .admin-details p {
+            margin: 5px 0;
+        }
+        .admin-icon:hover .admin-details {
+            display: block;
+        }
     </style>
   </head>
   <body>
     <div class="header">
-      <div> <img src = "https://logo.com/image-cdn/images/kts928pd/production/11e5681ac3b77c52480a1748abb1950ba40e4884-357x358.png?w=1080&q=72" style = "width:80px;height:35px; border-radius:10px;margin-left:10px;">
+      <div> <img src = "https://cdn.pixabay.com/photo/2015/10/20/21/05/mcdonald-998495_1280.png" style = "width:80px;height:35px; border-radius:10px;margin-left:10px;">
       </div>
-      <p class="logo" style = "margin-left:300px;color:black;font-weight: bold;">FOODPICK</p>
-      <a href="#" class="userIcon" id="userIcon"
+      <p class="logo" style = "margin-left:320px;color:black;font-weight: bold;">FOODPICK</p>
+      <!-- <a href="#" class="userIcon" id="userIcon"
         ><i
           class="fa-solid fa-user"
           style="
@@ -75,8 +117,19 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
             top: 15px;
             font-size: 20px;
           "></i>
-      </a>
-      <div  onclick="userLogout()" id = "userLogout" style ="margin-bottom:20px;" ><a style = "position: absolute;right:130px;cursor: pointer; font-weight:bold;">Logout</a></div>
+      </a> -->
+      <div class="admin-icon-container">
+        <div class="admin-icon">
+            <img src="./images/Ram Photo.jpeg" alt="Admin Icon">
+            <div class="admin-details">
+                <p> ramakrishna</p>
+                <p> ramu@gmail.com</p>
+                <p> 8880277248</p>
+            </div>
+        </div>
+    </div>
+
+      <div  onclick="userLogout()" id = "userLogout" style ="margin-bottom:20px;" ><a style = "position: absolute;right:100px;cursor: pointer; font-weight:bold;">Logout</a></div>
       <div class="cart">
         <i class="fa-solid fa-cart-shopping" id="count" id="showPopup" style = "color:black;width:25px;height:16px;border-radius: 50%;margin-left:20px;"></i>
         
@@ -129,13 +182,13 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
       <span class="close">&times;</span>
 
       <form id="paymentForm">
-        <label for="paymentMethod">Payment Methods:</label>
+        <label for="paymentMethod" style = "font-weight: bold;font-size:20px;color:brown">Payment Methods:</label>
         <!-- <select id="paymentMethod" name="paymentMethod">
                     <option value="debit">Debit Card</option>
                     <option value="credit">Credit Card</option>
                     <option value="upi">UPI</option>
                 </select> -->
-        <h3>Debit/Credit/Payment</h3>
+        <h3 style = "color:black;font-weight:bold;;">Debit/Credit/Payments</h3>
         <div id="cardDetails">
           <!-- <label for="cardNumber">Card Number:</label> -->
           <input
@@ -170,7 +223,7 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
           <div class="error" id="expiryDateError"></div>
           <br />
         </div>
-        <button type="button" id="proceedButton">Payment Confirm</button>
+        <button type="button" id="proceedButton" style = "color:white;border-color: black;border:none;outline:none;">Payment Confirm</button>
       </form>
     </div>
   </div>
@@ -180,16 +233,16 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
 
 <div style="display: none;
  position: fixed;
-  top: 70%;
-  left: 70%;
-  transform:translate(-70%,-70%);
-  width: 200px;
+  top: 50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width: 250px;
   height:300px;
   padding:10px;
   border: 1px solid transparent;
   background-color:orange";  id = "confirmationPopup">
-    <div >
-      <span  onclick="confirmationPopup()">x</span>
+    <div style = "margin-top:20px;" >
+      <!-- <div  onclick="confirmationPopup()" style = "margin-right:3px;margin-top:3px;">x</div> -->
         <h2 style = "text-align:center">Order Confirmation</h2>
         <!-- <p>Name: Ramakrishna</p>
         <p>Address:</p>
@@ -202,7 +255,7 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
 
         </ul>
         <h3 style = "text-align:center;" >Thank You</h3>
-        <button id="downloadButton">Download PDF</button>
+        <button id="downloadButton" style = "margin-bottom:3px;">Download PDF</button>
     </div>
 </div>
 

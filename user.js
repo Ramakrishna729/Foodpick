@@ -188,6 +188,7 @@ function delElement(a){
 function displaycart(){
     let j = 0, total=0;
     document.getElementById("count").innerHTML=cart.length;
+    
     if(cart.length==0){
         document.getElementById('cartItem').innerHTML = "Your cart is empty";
         document.getElementById("total").innerHTML = "₹ "+0+".00";
@@ -426,7 +427,7 @@ grandTotal = grandTotal +(item.price* item.qty)
 
 
 document.getElementById('proceedButton').addEventListener('click', function() {
-    localStorage.setItem('paymentConfirmationMessage', 1);
+    localStorage.setItem('cart', 1);
     // alert('Payment confirmation sent.');
 });
 

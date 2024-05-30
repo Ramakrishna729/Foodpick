@@ -74,3 +74,27 @@
 /* user.js */
 
 /* 
+  <div class="displayprofile" id="displayprofile">
+        <button
+          class="containerclsoeBtn"
+          id="updateClose"
+          onclick="closeProfile()"
+        >
+          X
+        </button>
+        <div class="content">
+          <div id="userNameDisplay">Guruprasad</div>
+          <div id="userEmailID">example@gmail.com</div>
+          <div id="userMobile">6363135746</div>
+          <div class="float-right">
+            <button class="btn" onclick="logout()">Logout</button>
+          </div>
+        </div>
+      </div>
+
+      function closeProfile() {
+  document.getElementById("displayprofile").style.display = "none";
+   function ShowProfile() {
+        document.getElementById("displayprofile").style.display = "block";
+      }
+}
