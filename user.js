@@ -478,6 +478,20 @@ function finalDownload() {
   }
 
 
+  function closeProfile() {
+    document.getElementById("displayprofile").style.display = "none";
+    
+  }
+  function ShowProfile() {
+    document.getElementById("displayprofile").style.display = "block";
+  }
+
+  function logout() {
+    localStorage.setItem("isLogin", "");
+    location.href = "index.html";
+  }
+
+
 
  
 

@@ -94,7 +94,26 @@
 
       function closeProfile() {
   document.getElementById("displayprofile").style.display = "none";
-   function ShowProfile() {
-        document.getElementById("displayprofile").style.display = "block";
-      }
+  
 }
+function ShowProfile() {
+  document.getElementById("displayprofile").style.display = "block";
+}
+
+
+
+<div class="float-right user-detail" onclick="showProfile()">
+  <i class="bx bxs-user profile"></i>
+</div>
+<div class="displayprofile" id="displayprofile">
+  <button class="containerclsoeBtn" onclick="closeProfile()">
+    X
+  </button>
+  <div class="content">
+    <div id="userNameDisplay">Admin</div>
+    <div id="userEmailID">admin@gmail.com</div>
+    <div id="userMobile">9611796790</div>
+    <div class="float-right">
+      <button class="btn" onclick="adminLogout()">Logout</button>
+    </div>
+  </div>

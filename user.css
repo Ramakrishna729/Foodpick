@@ -350,3 +350,40 @@ body{
     margin-left: 40px;
 
 }
+
+.displayprofile {
+    display: none;
+    border-radius: 10px;
+    position: fixed;
+    top: 40px;
+    right: 35px;
+    width: 250px;
+    background-color: rgba(16, 16, 16, 0.9);
+  }
+  .profile:hover .displayprofile {
+    display: block; /* Show the profile on hover */
+  }
+  
+  .displayprofile .content {
+    /* background-color: green; */
+    width: 200px;
+    margin: 30px;
+    color: white;
+  }
+  
+  .displayprofile .content .btnlogout {
+    float: left;
+    padding: 0;
+    background-color: transparent;
+    color: red;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .displayprofile .content div {
+    margin-top: 15px;
+  }
+  .displayprofile .content div:last-child {
+    margin-bottom: 15px;
+  }
+  
