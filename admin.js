@@ -426,21 +426,21 @@ function te(obj, index) {
 
   productItem.innerHTML = `
         
-            <div class= edit-delete-container>
-                <img src="${product.image}" alt="${product.title}" style = "width:250px;">
-                
-                <div>
+            <div class= edit-delete-container id = "edit-delete-container" style = "background-color:;">
+            <h3 onclick = "editDeleteContainer()" style = "color:red;margin-left:100%";margin-top:2px;>X</h3>
+            <div>
+                <img src="${product.image}" alt="${product.title}" style = "width:200px;">
+            </div>
+            <div>
                 <p style = "text-transform:uppercase;font-weight:bold;color:block">${product.item}</p>
                 <p style = "text-transform:uppercase;font-weight:bold;color:orange">${product.title}</p>
                 <p style = "text-transform:uppercase;font-weight:bold;color:red">Price:₹ ${product.price}</p>
                 </div>   
-                
-            
-        </div>    
-            <div class="edit-delete">
-                <button onclick="editProduct('${index}')">Edit</button>
-                <button onclick="deleteProduct('${product.id}')">Delete</button>
+            <div class="edit-delete"  onclick = "editBtnPopup()">
+                <button onclick="editProduct('${index}')" style = "background-color:orange;color:white;font-weight:bold;font-size:20px;font-weight:bold;border:none;outline:none;padding:5px 20px;border-radius:5px;" id = "editBtnPopup" >Edit</button>
+                <button onclick="deleteProduct('${product.id}')" style = "background-color:orange;color:white;font-weight:bold;font-size:20px;font-weight:bold;border:none;outline:none;padding:5px 20px;border-radius:5px;">Delete</button>
             </div>
+            </div> 
         `;
   // productList.appendChild(productItem);
 
@@ -471,4 +471,20 @@ function showProfile() {
 
 function closeProfile() {
   document.getElementById("displayprofile").style.display = "none";
+}
+
+function editDeleteContainer(){
+ let editDelete =  document.getElementById("edit-delete-container")
+ editDelete.addEventListener("click",function(){
+  document.getElementById("edit-delete-container").style.display = "none"
+ })
+}
+
+function editBtnPopup(){
+  let editBtnPopup = document.getElementById("editBtnPopup")
+  editBtnPopup.addEventListener("click",function(){
+    document.getElementById("edit-delete-container").style.display = "none"
+    document.getElementById("productPopup").style.display = "block"
+  })
+
 }

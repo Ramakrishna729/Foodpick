@@ -10,21 +10,73 @@
     <link rel="stylesheet" href="admin.css" />
     <link rel="stylesheet" href="./about.css" />
     <title>Product Filter</title>
+    <style>
+           .admin-icon-container {
+            display: flex;
+            justify-content: flex-end;
+            /* background-color: #333; */
+            padding: 10px;
+        }
+        .admin-icon-container .admin-icon {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .admin-icon-container .admin-icon img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        .admin-details {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 50px;
+            right:30px;
+            background-color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 200px;
+            z-index: 4;
+            font-weight: bold;
+        }
+        .admin-details p {
+            margin: 5px 0;
+        }
+        .admin-icon:hover .admin-details {
+            display: block;
+        }
+
+    </style>
 </head>
 <body>
     <!-- Header information -->
     <nav class="header">
         <div>
-            <img src = "https://logo.com/image-cdn/images/kts928pd/production/11e5681ac3b77c52480a1748abb1950ba40e4884-357x358.png?w=1080&q=72" style = "width:80px;height:35px; border-radius:10px">
+            <img src = "https://cdn.pixabay.com/photo/2015/10/20/21/05/mcdonald-998495_1280.png" style = "width:80px;height:35px; border-radius:10px">
         </div>
     <div class="header-left">
 
         <a class="header-brand" href="#" style = "color: black;font-weight: bold;">FOODPICK</a>
     </div>
     <div class="header-right">
-    <a href="#" class="icon"> <i class="fa-solid fa-envelope" id = "envelope" style = "color:black;background-color:transparent;font-size:16px;font-weight: bold;position:absolute;right:40px;bottom:1px;"></i> </a>
-    <div>
-    <a href="#" class="icon" onclick="showProfile()" > <i class="fa-solid fa-user" id = "admin-icon" ></i> </a>
+    <a href="#" class="icon"> <i class="fa-solid fa-envelope" id = "envelope" style = "color:black;background-color:transparent;font-size:20px;font-weight: bold;position:absolute;right:70px;bottom:7px;width:30px;height:30px;border-radius:50%;"></i> </a>
+    
+    <!-- <a href="#" class="icon" onclick="showProfile()" > <i class="fa-solid fa-user" id = "admin-icon" ></i> </a> -->
+    <div class="admin-icon-container">
+        <div class="admin-icon">
+            <img src="./images/Ram Photo.jpeg" alt="Admin Icon">
+            <div class="admin-details">
+                <p> Admin</p>
+                <p> admin@gmail.com</p>
+                <p> 8639362024</p>
+            </div>
+        
+    </div>
+
     </div>
     </div>
     <div>

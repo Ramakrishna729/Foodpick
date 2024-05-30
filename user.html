@@ -183,25 +183,25 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
   top: 70%;
   left: 70%;
   transform:translate(-70%,-70%);
-  width: 600px;
-  height:500px;
+  width: 200px;
+  height:300px;
   padding:10px;
   border: 1px solid transparent;
   background-color:orange";  id = "confirmationPopup">
     <div >
       <span  onclick="confirmationPopup()">x</span>
         <h2 style = "text-align:center">Order Confirmation</h2>
-        <p>Name: Ramakrishna</p>
+        <!-- <p>Name: Ramakrishna</p>
         <p>Address:</p>
         <p>7/72 Foodpick(street),</p>
         <p>Rajajinagar,</p>
         <p>Bangalore,</p> 
         <p>  515305</p> 
-        <h3>Cart Items</h3>
+        <h3>Cart Items</h3> -->
         <ul id="cartItems" style = "list-style-type: none;">
 
         </ul>
-        <h3>Thank You</h3>
+        <h3 style = "text-align:center;" >Thank You</h3>
         <button id="downloadButton">Download PDF</button>
     </div>
 </div>
@@ -316,32 +316,30 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
       </footer>
     </div>
 
-    <div style="text-align: center; position:fixed;top:10px;left:10px;background-color:white;display:none;;width:400px;height:400px;color:black" id = "pdfDiv">
-      <div id="sts" style="text-align: center;width:400px;height:400px;">
+    <div style="text-align: center; position:fixed;top:10px;left:10px;background-color:white;display:none;;width:400px;color:black" id = "pdfDiv">
+      <div id="sts">
       <h1 style="text-align: center;">FoodPic</h1>
-      <h6 style="text-align: center;">Enjoy the every bite</h1>
-      <table style="margin-left: auto;margin-right: auto;" id = 'pdfTable'>
+      <h3 style = "text-align:center" >Enjoy the every bite</h3>
+      <div class = "address", style ="margin-left:40px;">
+        <h3>Name: Ramakrishna</h3>
+        <h3>Address:</h3>
+        <p>7/72 Foodpick(street), <span>Rajajinagar</span>,<span>Bangalore,</span><span>515305</span> </p>
+        </div>
+      <table style="width:80%;border:1px solid black" id = 'pdfTable'>
           <tr>
-              <td>item</td>
-              <td>qty</td>
+              <td>Item</td>
+              <td>Qty</td>
               <td>Price</td>
           </tr>
-          <tr>
-              <td>chaoati</td>
-              <td>1</td>
-              <td>12</td>
-          </tr>
-          <tr>
-              <td>chaoati2</td>
-              <td>1</td>
-              <td>12</td>
-          </tr>
-      </table>
-      <p>Grand Total <span id ="pdfGrandTotal">1223</span></p>
-  
+         
+        </table>
+        <p style = "text-align:center;font-weight: bold;">Grand Total <span id ="pdfGrandTotal">1223</span></p>
+
       <h1>Thank you for order</h1>
+      
     </div>
     </div>
+     
   
     <script src="user.js"></script>
   </body>

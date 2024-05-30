@@ -373,7 +373,7 @@ localStorage.setItem('products', JSON.stringify("products"
 
 
 function showPayment(){
-    debugger
+
     document.getElementById("popupContainerside").style.display = "none"
     document.getElementById("paymentPopup").style.display = "block"
     let bookedCart=document.getElementById("cartItems")
@@ -387,31 +387,35 @@ function showPayment(){
 }
 
 
-
+var pdfGrandPrice = document.getElementById("pdfGrandTotal")
 function downloadpdf (){
     
     let pdfTable = document.getElementById("pdfTable")
     let grandTotal = 0;
     pdfTable.innerHTML=""
-    pdfTable.insertAdjacentHTML("beforeend",`<tr>
-    <td>item</td>
-    <td>qty</td>
-    <td>Price</td>
+    pdfTable.insertAdjacentHTML("beforeend",`
+    <tr style = "border:1px solid black;border-collapse:collapse;width:80%">
+    <th>Item</th>
+    <th>Qty</th>
+    <th>Price</th>
 </tr>`)
     cart.forEach(item =>{pdfTable.insertAdjacentHTML("beforeend",`<tr>
     <td>${item.title}</td>
     <td>${item.qty}</td>
     <td>${item.price* item.qty}</td>
-</tr>`)
-grandTotal = grandTotal +(item.price* item.qty) 
+</tr>`
+)
+
+grandTotal = grandTotal +(item.price* item.qty)
+ 
 
     })
 
-    document.getElementById("pdfGrandTotal").innerHTML = grandTotal
+    pdfGrandPrice.innerHTML = grandTotal
     document.getElementById("pdfDiv").style.display = "block"
 
     finalDownload()
-    document.getElementById("pdfDiv").style.display = "none"
+    document.getElementById("pdfDiv").style.display = "block"
    
         //  location.reload()
 
@@ -461,13 +465,13 @@ function  decreaseQty(id){
 
 
 function finalDownload() {
-debugger
+
     var ele = document.getElementById("sts");
     const opt = {
       filename: "bill.pdf",
       margin: 2,
-      image: { type: "jpeg", quality: 0.9 },
-      jsPDF: { format: "letter", orientation: "portrait" },
+      image: { type: "png", quality: 0.9 },
+      jsPDF: { format: "A4", orientation: "portrait" },
     };
     html2pdf().set(opt).from(ele).save();
   }

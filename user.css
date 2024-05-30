@@ -333,3 +333,18 @@ input[type="text"], select {
     height: 40px;
 } */
 
+table,tr,th,td{
+    border:1px solid black;
+    border-collapse: collapse;
+}
+body{
+    box-sizing: border-box;
+    margin:0px;
+    padding: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.address{
+    margin-left: 40px;
+
+}
