@@ -192,6 +192,11 @@ function displaycart(){
     if(cart.length==0){
         document.getElementById('cartItem').innerHTML = "Your cart is empty";
         document.getElementById("total").innerHTML = "₹ "+0+".00";
+         let buyBtn = document.getElementById("buyButton")
+         buyBtn.addEventListener("click",function(){
+          document.getElementById("buyButton").style.visibility = "hidden"
+         })
+        
         
         
     }
@@ -210,9 +215,9 @@ function displaycart(){
                 <p style='font-size:12px;'>${item}</p>
 
                 <p style='font-size:12px;color:orange;'>${title}</p>
-                <p style='font-size:12px;color:red;cursor:pointer;font-size:18px;' onclick ="decreaseQty('${id}')" >-</p>
+                <p style='font-size:12px;color:red;cursor:pointer;font-size:20px;' onclick ="decreaseQty('${id}')" >-</p>
                 <p style='font-size:12px;color:green;' >Qty:${qty}</p>
-                <p style='font-size:12px;color:green;cursor:pointer;font-size:18px;'  onclick ="increaseQty('${id}')">+</p>
+                <p style='font-size:12px;color:green;cursor:pointer;font-size:20px;'  onclick ="increaseQty('${id}')">+</p>
                 <h2 style='font-size: 15px;'>₹ ${price*qty}.00</h2>`+
                 "<i class='fa-solid fa-trash' onclick='delElement("+ (j++) +")'></i></div>"
             );

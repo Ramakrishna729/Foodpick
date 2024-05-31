@@ -427,7 +427,7 @@ function te(obj, index) {
   productItem.innerHTML = `
         
             <div class= edit-delete-container id = "edit-delete-container" style = "background-color:;">
-            <h3 onclick = "editDeleteContainer()" style = "color:red;margin-left:100%";margin-top:2px;>X</h3>
+            <h3 onclick = "editDeleteContainer()" style = "color:red;margin-left:100%";margin-top:2px;>x</h3>
             <div>
                 <img src="${product.image}" alt="${product.title}" style = "width:200px;">
             </div>
@@ -496,7 +496,7 @@ function displaycart(){
   document.getElementById("count").innerHTML=cart.length;
 document.getElementById("cartItem").innerHTML = cart.map((items)=>
       {
-          var {image, title, price,item,qty,id} = items;
+          var {image,title, price,item} = items;
           return(
               `<div class='cart-item'>
               <div class='row-img'>
@@ -505,6 +505,7 @@ document.getElementById("cartItem").innerHTML = cart.map((items)=>
               <p style='font-size:12px;'>${item}</p>
 
               <p style='font-size:12px;color:orange;'>${title}</p>
+              <p style='font-size:12px;color:orange;'>${price}</p>
             `);
       }).join('');
   }
