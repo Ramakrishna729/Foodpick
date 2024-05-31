@@ -116,4 +116,34 @@ function ShowProfile() {
     <div class="float-right">
       <button class="btn" onclick="adminLogout()">Logout</button>
     </div>
-  </div>
+  </div>  <h2 style='font-size: 15px;'>₹ ${price*qty}.00</h2>`+
+  "<i class='fa-solid fa-trash' onclick='delElement("+ (j++) +")'></i></div>"
+  total=total+(price*qty);
+  document.getElementById("total").innerHTML = "₹ "+total+".00";
+  console.log(items)
+  <p style='font-size:12px;color:red;cursor:pointer;font-size:18px;' onclick ="decreaseQty('${id}')" >-</p>
+  <p style='font-size:12px;color:green;' >Qty:${qty}</p>
+  <p style='font-size:12px;color:green;cursor:pointer;font-size:18px;'  onclick ="increaseQty('${id}')">+</p>
+  let j = 0, total=0;
+  
+  
+  
+  function displaycart(){
+   
+    document.getElementById("count").innerHTML=cart.length;
+  document.getElementById("cartItem").innerHTML = cart.map((items)=>
+        {
+            var {image, title, price,item,qty,id} = items;
+            return(
+                `<div class='cart-item'>
+                <div class='row-img'>
+                    <img class='rowimg' src=${image}>
+                </div>
+                <p style='font-size:12px;'>${item}</p>
+
+                <p style='font-size:12px;color:orange;'>${title}</p>
+              `);
+        }).join('');
+    }
+
+    

@@ -100,7 +100,7 @@ console.log(products);
 // document.getElementById('admin-icon').addEventListener("click",adminInfo)
 
 
-let rupeeSymbol = "&#8377"
+// let rupeeSymbol = "&#8377"
 
 function showRecipe() {
   document.getElementById("recipeContainer").style.display = "";
@@ -449,19 +449,20 @@ function te(obj, index) {
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  const envelope = document.getElementById('envelope');
-  const message = localStorage.getItem('cart');
+// notification code
+// document.addEventListener('DOMContentLoaded', function() {
+//   const envelope = document.getElementById('envelope');
+//   const message = localStorage.getItem('cart');
 
-  if (message) {
-      envelope.textContent = message;
-      //  Optionally, remove the message from localStorage after displaying it
-       localStorage.removeItem('paymentConfirmationMessage');
-  } 
-  // else {
-  //     envelope.textContent = '0';
-  // }
-});
+//   if (message) {
+//       envelope.textContent = message;
+//       //  Optionally, remove the message from localStorage after displaying it
+//        localStorage.removeItem('paymentConfirmationMessage');
+//   } 
+//   else {
+//       envelope.textContent = '0';
+//   }
+// });
 
 
 function showProfile() {
@@ -488,3 +489,22 @@ function editBtnPopup(){
   })
 
 }
+
+// display cart from user.js
+function displaycart(){
+   
+  document.getElementById("count").innerHTML=cart.length;
+document.getElementById("cartItem").innerHTML = cart.map((items)=>
+      {
+          var {image, title, price,item,qty,id} = items;
+          return(
+              `<div class='cart-item'>
+              <div class='row-img'>
+                  <img class='rowimg' src=${image}>
+              </div>
+              <p style='font-size:12px;'>${item}</p>
+
+              <p style='font-size:12px;color:orange;'>${title}</p>
+            `);
+      }).join('');
+  }
