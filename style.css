@@ -6,24 +6,26 @@
 }
 
 body {
-  background-image: url("./images/food.jpg");
+  /* background-image: url("./images/food.jpg"); */
+  background-image: url("https://t3.ftcdn.net/jpg/04/46/37/36/240_F_446373646_uYHx1cGEL6zrndv4xlcElHtHdfa0BF0j.jpg");
   background-size: cover;
   background-position: bottom;
 }
 
-/* 
-  .headContainer.header .logoColor{
+ 
+  .headContainer{
   
     margin-top: 2px;
     margin-left: 4px;
     border:2px solid ;
-    border: 2px solid red
-  } */
+     border: 2px solid red; */
+    background-color:brown
+  } 
 
 .logColor {
-  color: orange;
+  color: white;
   margin-top: 1px;
-  margin-left: 16px;
+  margin-left: 0px;
   font-size: 30px;
   font-weight: bold;
 }
@@ -90,7 +92,7 @@ body {
   left: 80%;
   transform: translate(-50%, -50%);
   background-color: #f8f8f8;
-  border: 2px solid orange;
+  border: 2px solid brown;
   border-radius: 20px;
 }
 
@@ -135,7 +137,7 @@ body {
 .loginContent .formWrapper h3 {
   font-size: 25px;
   text-align: center;
-  color: orange;
+  color: brown;
 }
 
 .registerContent .formWrapper .btn,
@@ -202,7 +204,7 @@ body {
 .clsoeBtn {
   padding: 6px;
   float: right;
-  color: orange;
+  color: red;
   border: none;
   margin: 7px;
   font-size: 16px;

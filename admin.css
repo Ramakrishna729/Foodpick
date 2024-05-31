@@ -184,10 +184,11 @@ body {
 }
 
 .product {
-  border: 1px solid gainsboro;
+  border: 2px solid brown;
   margin: 10px;
   padding: 20px;
   max-width: 200px;
+  border-radius: 5px;
   /* display:flex;
   flex-direction: column; */
 
@@ -205,15 +206,17 @@ body {
 
 
 .edit-delete-container{
-  border:1px solid transparent;
-  width:230px;
+  border:2px solid brown;
+  width:250px;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color:aquamarine;
+  background-color:white;
   border-radius:10px;
+  position:absolute;
+  z-index: 40;
 }
 .edit-delete{
   /* border: 1px solid transparent;
@@ -228,7 +231,7 @@ body {
   align-items: end;
   align-content: end; */
 
-  border:1px solid orange;
+  border: 1px solid brown;
   width:250px;
   display:flex;
   flex-direction: column;
@@ -296,7 +299,7 @@ body {
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: orange;
+  background: brown;
   padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

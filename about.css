@@ -55,11 +55,11 @@ p {
     display: block;
     width:100%;
     height:auto;
-    background-color:orange;
+    background-color:brown;
     display: flex;
     flex-direction: row;
     justify-content: space-around; 
-    color: black;
+    color: white;
    
    
     

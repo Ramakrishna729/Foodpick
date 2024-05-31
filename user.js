@@ -188,13 +188,20 @@ function delElement(a){
 function displaycart(){
     let j = 0, total=0;
     document.getElementById("count").innerHTML=cart.length;
+
+    if(cart.length == ""){
+      let buyBtn = document.getElementById("buyButton")
+      buyBtn.addEventListener("click",function(){
+       document.getElementById("buyButton").style.display = "none"
+
+      })}
     
     if(cart.length==0){
         document.getElementById('cartItem').innerHTML = "Your cart is empty";
         document.getElementById("total").innerHTML = "₹ "+0+".00";
          let buyBtn = document.getElementById("buyButton")
          buyBtn.addEventListener("click",function(){
-          document.getElementById("buyButton").style.visibility = "hidden"
+          document.getElementById("buyButton").style.display = "none"
          })
         
         
@@ -243,10 +250,10 @@ function popupContainerside(){
     document.getElementById("popupContainerside").style.display = "none"
 }
 
-function confirmationPopup(){
-    document.getElementById("confirmationPopup").style.display = "none"
+// function confirmationPopup(){
+//     document.getElementById("confirmationPopup").style.display = "none"
     
-}
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
     let rootItem = document.getElementById("root")
@@ -292,6 +299,11 @@ document.getElementById("recipes").addEventListener("click",function(){
     document.getElementById("confirmationPopup").style.display = "block"
  }
 
+//  let confirmationPopup = document.getElementById("closeConfirmationPopup")
+
+// confirmationPopup.addEventListener("click",function(){
+//   document.getElementById("confirmationPopup").style.display = "none"
+// })
 
 
 
@@ -378,7 +390,23 @@ localStorage.setItem('products', JSON.stringify("products"
 ));
 
 
+
 function showPayment(){
+  
+
+  if(localStorage.getItem('paymentConfirmationMessage' ) !== null ){
+   debugger
+   let storePayment = JSON.parse(localStorage.getItem('paymentConfirmationMessage' )) 
+   let res = storePayment.concat(cart) 
+    localStorage.setItem('paymentConfirmationMessage',JSON.stringify(res))
+   
+
+  }
+  else{
+    localStorage.setItem('paymentConfirmationMessage',JSON.stringify(cart))
+
+  }
+   
 
     document.getElementById("popupContainerside").style.display = "none"
     document.getElementById("paymentPopup").style.display = "block"
@@ -389,6 +417,8 @@ function showPayment(){
         bookedCart.insertAdjacentHTML("beforeend",`
         <li>${obj.title}</li>`) 
     })
+
+
 
 }
 
@@ -428,13 +458,10 @@ grandTotal = grandTotal +(item.price* item.qty)
 }
 
 
-//  confirmation popup
+//  Notification  Popup
 
 
-document.getElementById('proceedButton').addEventListener('click', function() {
-    localStorage.setItem('cart', 1);
-    // alert('Payment confirmation sent.');
-});
+
 
 
 
@@ -496,6 +523,26 @@ function finalDownload() {
     location.href = "index.html";
   }
 
+  document.getElementById("count").addEventListener("click",function(){
+    document.getElementById("count").style.display = "block"
+    document.getElementById("root").style.display = "none"
+    document.getElementById("footer-container").style.display = "none"
+   
+   
+  })
+
+ 
+
+  // if(cartItem.length === 0){
+
+  //   document.getElementById("buyButton").addEventListener("click",function(){
+  //     document.getElementById("paymentPopup").style.visibility = "hidden"
+  //   })
+  // }
+
+  
+
+  
 
 
  

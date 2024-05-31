@@ -80,7 +80,7 @@ body{
     text-align: center;
 } */
 .head{
-    background-color: orange;
+    background-color:brown;
     border-radius: 3px;
     height: 15px;
     padding: 10px;
@@ -102,7 +102,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid gainsboro;
+    border: 2px solid brown ;
     border-radius: 5px;
     padding: 5px;
 }
@@ -139,7 +139,7 @@ button{
     border: none;
     outline:none;
     border-radius: 5px;
-    background-color:black;
+    background-color:brown;
     padding: 7px 25px;
     cursor: pointer;
     color:white;
@@ -184,7 +184,7 @@ button:hover{
     position: fixed;
     width: 35%;
     min-height:30%;
-    background-color:orange;
+    background-color:brown;
     top: 45%;
     left:50%;
     transform: translate(-50%,-50%);

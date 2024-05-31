@@ -252,7 +252,7 @@ function isValidProductDetails({ item, title, imageInput, price }) {
 
   let res=products.filter(item=>item.title.toUpperCase()===title.toUpperCase())
   if(res.length>=1){
-    document.getElementById("titleValidation").innerText = "item alredy exits";
+    document.getElementById("titleValidation").innerText = "Item Alredy Exits";
       document.getElementById("titleValidation").style.display = "block";
     return false;
   }
@@ -437,8 +437,8 @@ function te(obj, index) {
                 <p style = "text-transform:uppercase;font-weight:bold;color:red">Price:₹ ${product.price}</p>
                 </div>   
             <div class="edit-delete"  onclick = "editBtnPopup()">
-                <button onclick="editProduct('${index}')" style = "background-color:orange;color:white;font-weight:bold;font-size:20px;font-weight:bold;border:none;outline:none;padding:5px 20px;border-radius:5px;" id = "editBtnPopup" >Edit</button>
-                <button onclick="deleteProduct('${product.id}')" style = "background-color:orange;color:white;font-weight:bold;font-size:20px;font-weight:bold;border:none;outline:none;padding:5px 20px;border-radius:5px;">Delete</button>
+                <button onclick="editProduct('${index}')" style = "background-color:brown;color:white;font-weight:bold;font-size:20px;font-weight:bold;border:none;outline:none;padding:5px 20px;border-radius:5px;" id = "editBtnPopup" >Edit</button>
+                <button onclick="deleteProduct('${product.id}')" style = "background-color:brown;color:white;font-weight:bold;font-size:20px;font-weight:bold;border:none;outline:none;padding:5px 20px;border-radius:5px;">Delete</button>
             </div>
             </div> 
         `;
@@ -450,19 +450,22 @@ function te(obj, index) {
 
 
 // notification code
-// document.addEventListener('DOMContentLoaded', function() {
-//   const envelope = document.getElementById('envelope');
-//   const message = localStorage.getItem('cart');
+document.addEventListener('DOMContentLoaded', function() {
+  const envelope = document.getElementById('envelope');
+  const message = JSON.stringify(localStorage.getItem('paymentConfirmationMessage'));
+  console.log(message)
+  envelope.innerHTML = message.length
 
-//   if (message) {
-//       envelope.textContent = message;
-//       //  Optionally, remove the message from localStorage after displaying it
-//        localStorage.removeItem('paymentConfirmationMessage');
-//   } 
-//   else {
-//       envelope.textContent = '0';
-//   }
-// });
+  // if (message) {
+  //     envelope.innerHTML = message.length;
+      
+  //     //  Optionally, remove the message from localStorage after displaying it
+  //       //  localStorage.removeItem('paymentConfirmationMessage');
+  // } 
+  // else {
+  //     envelope.textContent = '';
+  // }
+});
 
 
 function showProfile() {
@@ -493,6 +496,7 @@ function editBtnPopup(){
 // display cart from user.js
 function displaycart(){
    
+  let cart = JSON.stringify(localStorage.getItem("paymentConfirmationMessage"))
   document.getElementById("count").innerHTML=cart.length;
 document.getElementById("cartItem").innerHTML = cart.map((items)=>
       {
