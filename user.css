@@ -229,7 +229,7 @@ button:hover{
 }
 
 .popup-content {
-    background-color: orange;
+    background-color: brown;
     padding: 20px;
     border-radius: 5px;
     width: 300px;
@@ -256,7 +256,7 @@ input[type="text"], select {
 }
 
 .error {
-    color: red;
+    color: white;
     font-size: 12px;
     height: 16px;
     margin-top: 4pxpx;

@@ -392,31 +392,36 @@ localStorage.setItem('products', JSON.stringify("products"
 
 
 function showPayment(){
+
+  document.getElementById("popupContainerside").style.display = "none"
+  document.getElementById("paymentPopup").style.display = "block"
+  document.getElementById("count").style.display = "none"
   
 
-  if(localStorage.getItem('paymentConfirmationMessage' ) !== null ){
-   debugger
-   let storePayment = JSON.parse(localStorage.getItem('paymentConfirmationMessage' )) 
-   let res = storePayment.concat(cart) 
-    localStorage.setItem('paymentConfirmationMessage',JSON.stringify(res))
+  // if(localStorage.getItem('paymentConfirmationMessage' ) !== null ){
+   
+  //  let storePayment = JSON.parse(localStorage.getItem('paymentConfirmationMessage' )) 
+  //  let res = storePayment.concat(cart) 
+  //   localStorage.setItem('paymentConfirmationMessage',JSON.stringify(res))
    
 
-  }
-  else{
-    localStorage.setItem('paymentConfirmationMessage',JSON.stringify(cart))
+  // }
+  // else{
+  //   localStorage.setItem('paymentConfirmationMessage',JSON.stringify(cart))
 
-  }
+  // }
    
 
-    document.getElementById("popupContainerside").style.display = "none"
-    document.getElementById("paymentPopup").style.display = "block"
-    let bookedCart=document.getElementById("cartItems")
+  //   document.getElementById("popupContainerside").style.display = "none"
+  //   document.getElementById("paymentPopup").style.display = "block"
+  //   document.getElementById("cartItems").style.visibility = "hidden"
+  //   let bookedCart=document.getElementById("cartItems")
     
-    console.log(cart)
-    cart.forEach(obj=>{
-        bookedCart.insertAdjacentHTML("beforeend",`
-        <li>${obj.title}</li>`) 
-    })
+  //   console.log(cart)
+  //   cart.forEach(obj=>{
+  //       bookedCart.insertAdjacentHTML("beforeend",`
+  //       <li>${obj.title}</li>`) 
+  //   })
 
 
 
@@ -539,6 +544,18 @@ function finalDownload() {
   //     document.getElementById("paymentPopup").style.visibility = "hidden"
   //   })
   // }
+document.getElementById("downloadButton").addEventListener("click",function(){
+  document.getElementById("confirmationPopup").style.display = "none"
+  document.getElementById("sts").location.href = "./user.html"
+  // document.getElementById("sts").style.display = "none"
+  // location.href = "./user.html"
+})
+
+document.getElementById("closePdf").addEventListener("click",function(){
+  document.getElementById("sts").style.display = "none"
+})
+
+
 
   
 

@@ -92,15 +92,7 @@ console.log(products);
 
 
 
-// function adminInfo(){
-//   document.getElementById("admin-name").innerHTML = "Admin" 
-//   document.getElementById("admin-email").innerHTML= "Admin@gmail.com"
-//   document.getElementById("admin-phone").innerHTML = "8639362024"
-// }
-// document.getElementById('admin-icon').addEventListener("click",adminInfo)
 
-
-// let rupeeSymbol = "&#8377"
 
 function showRecipe() {
   document.getElementById("recipeContainer").style.display = "";
@@ -168,28 +160,49 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initially display all products
   displayProducts(products);
 
-  document.getElementById("aboutus").addEventListener("click", function () {
-    productContainer.style.display = "none";
-    aboutContainer.style.display = "block";
-  });
+  // document.getElementById("aboutus").addEventListener("click", function () {
+  //   productContainer.style.display = "none";
+  //   aboutContainer.style.display = "block";
+  // });
+
+  document.getElementById("editBtnPopup").addEventListener("click",function(){
+
+    document.getElementById("productPopup").style.display = "block"
+    document.getElementById("edit-delete-container").style.display = "none"
+    document.getElementById("product-container").style.display = "none"
+   
+  
+  })
+
+
 
   // document.getElementById("productPopup").addEventListener("click",function(){
   //   document.getElementById("product-item").style.display = ""
 
   // })
-  document
-    .getElementById("addProductBtn")
-    .addEventListener("click", function () {
-      productContainer.style.display = "none";
-      aboutContainer.style.display = "none";
-      adminBtnContainer.style.display = "block";
-    });
+  // document
+  //   .getElementById("addProductBtn")
+  //   .addEventListener("click", function () {
+  //     productContainer.style.display = "none";
+  //     aboutContainer.style.display = "none";
+  //     adminBtnContainer.style.display = "block";
+  //   });
 
-    document.getElementById("addProductBtn").addEventListener("click",function(){
-      document.getElementsById("productPopup").style.display = "block "
-      document.getElementsById("footer").style.visibility =  "hidden"
-    })
+    // document.getElementById("addProductBtn").addEventListener("click",function(){
+    //   document.getElementsById("productPopup").style.display = "block "
+    //   document.getElementsById("footer").style.visibility =  "hidden"
+    //   document.getElementById("productContainer").style.display = "none"
+    // })
+
+   
 });
+
+
+
+// document.getElementById("editBtnPopup").addEventListener("click",function(){
+//   document.getElementById("edit-delete-container").style.display = "none"
+//   document.getElementById("productPopup").style.display = "block"
+// })
 
 // add btn information
 
@@ -197,7 +210,10 @@ const addproducts = [];
 
 document.getElementById("addProductBtn").addEventListener("click", () => {
   showPopup();
+  document.getElementById("product-container").style.display = "none"
 });
+
+
 
 document.getElementById("closePopupBtn").addEventListener("click", () => {
   closePopup();
@@ -227,6 +243,8 @@ function showPopup(product = null, index = null) {
     }
   });
 
+ 
+
   document.getElementById("productPrice").value = product ? product.price : "";
 
   currentEditingProductIndex = index;
@@ -234,6 +252,9 @@ function showPopup(product = null, index = null) {
   document.getElementById("popupTitle").innerText = product
     ? "Update Product"
     : "Add New Product";
+
+   
+
 }
 function closeEditDeletePopup() {
   const popup = document.getElementById("edit-delete-modal");
@@ -295,7 +316,7 @@ function isValidProductDetails({ item, title, imageInput, price }) {
 }
 
 function saveProduct() {
-  debugger
+
   const title = document.getElementById("productTitle").value.toUpperCase()
   const imageInput = document.getElementById("productImage");
   const item = document.getElementById("productItem").value.toUpperCase()
@@ -375,6 +396,8 @@ function renderProducts(itemid) {
 function editProduct(index) {
   // const editingProduct = products.find((obj) => obj.id === id);
   showPopup(products[index], index);
+
+ 
 }
 
 function deleteProduct(id) {
@@ -435,8 +458,9 @@ function te(obj, index) {
                 <p style = "text-transform:uppercase;font-weight:bold;color:block">${product.item}</p>
                 <p style = "text-transform:uppercase;font-weight:bold;color:orange">${product.title}</p>
                 <p style = "text-transform:uppercase;font-weight:bold;color:red">Price:₹ ${product.price}</p>
-                </div>   
-            <div class="edit-delete"  onclick = "editBtnPopup()">
+                </div> 
+                
+            <div class="edit-delete" >
                 <button onclick="editProduct('${index}')" style = "background-color:brown;color:white;font-weight:bold;font-size:20px;font-weight:bold;border:none;outline:none;padding:5px 20px;border-radius:5px;" id = "editBtnPopup" >Edit</button>
                 <button onclick="deleteProduct('${product.id}')" style = "background-color:brown;color:white;font-weight:bold;font-size:20px;font-weight:bold;border:none;outline:none;padding:5px 20px;border-radius:5px;">Delete</button>
             </div>
@@ -448,25 +472,33 @@ function te(obj, index) {
   
 }
 
+  // onclick = "editBtnPopup()"
+
 
 // notification code
-document.addEventListener('DOMContentLoaded', function() {
-  const envelope = document.getElementById('envelope');
-  const message = JSON.stringify(localStorage.getItem('paymentConfirmationMessage'));
-  console.log(message)
-  envelope.innerHTML = message.length
+// document.addEventListener('DOMContentLoaded', function() {
+//   const envelope = document.getElementById('envelope');
+//   const message = JSON.stringify(localStorage.getItem('paymentConfirmationMessage'));
+//   console.log(message)
+//   envelope.innerHTML = message.length
 
-  // if (message) {
-  //     envelope.innerHTML = message.length;
+//   if (message) {
+//       envelope.innerHTML = message.length;
       
-  //     //  Optionally, remove the message from localStorage after displaying it
-  //       //  localStorage.removeItem('paymentConfirmationMessage');
-  // } 
-  // else {
-  //     envelope.textContent = '';
-  // }
-});
+//       //  Optionally, remove the message from localStorage after displaying it
+//           localStorage.removeItem('paymentConfirmationMessage');
+//   } 
+//   else {
+//       envelope.textContent = '';
+//   }
+// });
 
+
+document.getElementById("addProductBtn").addEventListener("click",function(){
+  document.getElementsById("productPopup").style.display = "block "
+  document.getElementsById("footer").style.visibility =  "hidden"
+  document.getElementById("productContainer").style.display = "none"
+})
 
 function showProfile() {
   document.getElementById("displayprofile").style.display = "block";
@@ -484,14 +516,10 @@ function editDeleteContainer(){
  })
 }
 
-function editBtnPopup(){
-  let editBtnPopup = document.getElementById("editBtnPopup")
-  editBtnPopup.addEventListener("click",function(){
-    document.getElementById("edit-delete-container").style.display = "none"
-    document.getElementById("productPopup").style.display = "block"
-  })
 
-}
+ 
+
+
 
 // display cart from user.js
 function displaycart(){
@@ -513,3 +541,5 @@ document.getElementById("cartItem").innerHTML = cart.map((items)=>
             `);
       }).join('');
   }
+
+  

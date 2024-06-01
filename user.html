@@ -104,7 +104,7 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
   </head>
   <body>
     <div class="header">
-      <div> <img src = "./images/foodpick.png" style = "width:80px;height:35px; border-radius:10px;margin-left:10px;">
+      <div> <img src = "https://logo.com/image-cdn/images/kts928pd/production/11e5681ac3b77c52480a1748abb1950ba40e4884-357x358.png?w=1080&q=72" style = "width:80px;height:35px; border-radius:10px;margin-left:10px;">
       </div>
       <p class="logo" style = "margin-left:0px;color:white;font-weight: bold;">FOODPICK</p>
      
@@ -161,7 +161,7 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
     <div class="container" id="popupContainerside" style="display: none">
       <div style="margin: 15px">
         <div class="sidebar">
-          <div style = "color:red;position:absolute;right:10px;top:10px;", onclick="popupContainerside()">x</div>
+          <div style = "color:white;position:absolute;right:10px;top:10px;", onclick="popupContainerside()">x</div>
           <div class="head" style = "color:black;font-weight:bold;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><p>My Cart</p></div>
           <div id="cartItem">Your cart is empty</div>
           <div class="foot" id = "cartfoot">
@@ -183,7 +183,7 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
       <span class="close">&times;</span>
 
       <form id="paymentForm">
-        <label for="paymentMethod" style = "font-weight: bold;font-size:20px;color:brown">Payment Methods:</label>
+        <label for="paymentMethod" style = "font-weight: bold;font-size:20px;color:black">Payment Methods:</label>
         <!-- <select id="paymentMethod" name="paymentMethod">
                     <option value="debit">Debit Card</option>
                     <option value="credit">Credit Card</option>
@@ -224,7 +224,7 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
           <div class="error" id="expiryDateError"></div>
           <br />
         </div>
-        <button type="button" id="proceedButton" style = "color:white;border-color: black;border:none;outline:none;">Payment Confirm</button>
+        <button type="button" id="proceedButton" style = "color:white;border-color: black;border:none;outline:none;background: black;">Payment Confirm</button>
       </form>
     </div>
   </div>
@@ -241,7 +241,7 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
   height:300px;
   padding:10px;
   border: 1px solid transparent;
-  background-color:orange;border-radius:5px;"  id = "confirmationPopup">
+  background-color:brown;border-radius:5px;"  id = "confirmationPopup">
     <div style = "margin-top:20px;" >
        <!-- <div  onclick="confirmationPopup()"   style = "margin-right:3px;margin-top:3px;">x</div>  -->
         <h2 style = "text-align:center">Order Confirmation</h2>
@@ -257,7 +257,7 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
 
         </ul>
         <h3 style = "text-align:center;" >Thank You</h3>
-        <button id="downloadButton" style = "margin-bottom:3px;">Download PDF</button>
+        <button id="downloadButton" style = "margin-bottom:3px;border-color: black;">Download PDF</button>
     </div>
 </div>
 
@@ -371,8 +371,9 @@ https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></scr
       </footer>
     </div>
 
-    <div style="text-align: center; position:fixed;top:10px;left:10px;background-color:white;display:none;;width:400px;color:black" id = "pdfDiv">
-      <div id="sts">
+    <div style="text-align: center; position:fixed;top:90px;right:10px;background-color:brown;display:none;;width:500px;color:black" id = "pdfDiv">
+      <div id="sts" >
+        <h3 id = "closePdf" style = "position:absolute;color:black;right:30px;top:1px;">x</h3>
       <h1 style="text-align: center;">FoodPic</h1>
       <h3 style = "text-align:center" >Enjoy the every bite</h3>
       <div class = "address", style ="margin-left:40px;">
