@@ -66,7 +66,7 @@
     <a class="header-brand" href="#" style = "color: white;font-weight: bold;margin-left: 1px;">FOODPICK</a>
     </div>
     <div class="header-right">
-    <a href="#" class="icon"> <i class="fa-solid fa-bell" id = "envelope" style = "color:white;background-color:transparent;font-size:20px;font-weight: bold;position:absolute;right:40px;bottom:4px;width:30px;height:25px;border-radius:50%;" onclick = "displaycart()"></i> </a>
+    <a href="#" class="icon"> <i class="fa-solid fa-bell" id = "envelope" style = "color:white;background-color:transparent;font-size:20px;font-weight: bold;position:absolute;right:40px;bottom:4px;width:30px;height:25px;border-radius:50%;"></i> </a>
     
     <!-- <a href="#" class="icon" onclick="showProfile()" > <i class="fa-solid fa-user" id = "admin-icon" ></i> </a> -->
     <div class="admin-icon-container">
@@ -85,6 +85,7 @@
     <div  onclick="adminLogout()" id = "adminLogout" style ="position:absolute;right:10px;top:20px;cursor:pointer;font-weight:bold;color:white;">Logout</a></div>
     </div>
 </nav>
+<div id = "displayNotification"></div>
 <!-- <div id="admin-info" class="admin-info">
     <p><span id="admin-name"></span></p>
     <p><span id="admin-email"></span></p>
@@ -312,6 +313,9 @@
           </div>
         </div>
       </footer> -->
+
+      <div id="notificationContainer">
+      </div>
 
     <script src="admin.js"></script>
   </body>

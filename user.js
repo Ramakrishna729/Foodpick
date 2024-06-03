@@ -398,18 +398,17 @@ function showPayment(){
   document.getElementById("count").style.display = "none"
   
 
-  // if(localStorage.getItem('paymentConfirmationMessage' ) !== null ){
+   if(localStorage.getItem('paymentConfirmationMessage' ) !== null ){
    
-  //  let storePayment = JSON.parse(localStorage.getItem('paymentConfirmationMessage' )) 
-  //  let res = storePayment.concat(cart) 
-  //   localStorage.setItem('paymentConfirmationMessage',JSON.stringify(res))
+   let storePayment = JSON.parse(localStorage.getItem('paymentConfirmationMessage' ))    
+    let res = storePayment.concat(cart) 
+     localStorage.setItem('paymentConfirmationMessage',JSON.stringify(res))
+    //  localStorage.removeItem("paymentConfirmationMessage",res)
    
+   }
+   else{localStorage.setItem('paymentConfirmationMessage',JSON.stringify(cart))
 
-  // }
-  // else{
-  //   localStorage.setItem('paymentConfirmationMessage',JSON.stringify(cart))
-
-  // }
+   }
    
 
   //   document.getElementById("popupContainerside").style.display = "none"

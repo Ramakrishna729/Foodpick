@@ -108,6 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // envelope Message
 
+  // displayNotificaton()
+
  
 
   function displayProducts(filteredProducts) {
@@ -165,14 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //   aboutContainer.style.display = "block";
   // });
 
-  document.getElementById("editBtnPopup").addEventListener("click",function(){
-
-    document.getElementById("productPopup").style.display = "block"
-    document.getElementById("edit-delete-container").style.display = "none"
-    document.getElementById("product-container").style.display = "none"
-   
-  
-  })
+ 
 
 
 
@@ -196,6 +191,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
    
 });
+
+// document.getElementById("editBtnPopup").addEventListener("click",function(){
+
+//   document.getElementById("productPopup").style.display = "block"
+//   document.getElementById("edit-delete-container").style.display = "none"
+//   document.getElementById("product-container").style.display = "none"
+ 
+  
+
+// })
 
 
 
@@ -382,7 +387,7 @@ function renderProducts(itemid) {
             
         </div>    
             <div class="edit-delete" style = "display:flex;flex-direction:row;justify-content:end;align-items:end;">
-                <button  style = "color:white;background-color:black;" onclick="editProduct(${index})" >Edit</button>
+                <button  style = "color:white;background-color:black;" onclick="editProduct(${index})">Edit</button>
                 <button style = "color:white;background-color:black;" onclick="deleteProduct(${index})">Delete</button>
 
             </div>
@@ -494,6 +499,8 @@ function te(obj, index) {
 // });
 
 
+document.getElementById("envelope").addEventListener("click",displaycart)
+
 document.getElementById("addProductBtn").addEventListener("click",function(){
   document.getElementsById("productPopup").style.display = "block "
   document.getElementsById("footer").style.visibility =  "hidden"
@@ -523,14 +530,16 @@ function editDeleteContainer(){
 
 // display cart from user.js
 function displaycart(){
-   
+
   let cart = JSON.stringify(localStorage.getItem("paymentConfirmationMessage"))
+  let cart2 = JSON.parse(JSON.parse(cart ))
+
   document.getElementById("count").innerHTML=cart.length;
-document.getElementById("cartItem").innerHTML = cart.map((items)=>
+document.getElementById("displayNotification").innerHTML = cart2.map((items)=>
       {
           var {image,title, price,item} = items;
           return(
-              `<div class='cart-item'>
+              `<div class='cart-item' style = "display:flex;flex-direction:column;position:justify-content:center;align-items:center">
               <div class='row-img'>
                   <img class='rowimg' src=${image}>
               </div>
@@ -543,3 +552,12 @@ document.getElementById("cartItem").innerHTML = cart.map((items)=>
   }
 
   
+
+  // function displayNotificaton(){
+  //   debugger;
+  //   alert('workig')
+  //   let noticationCart=JSON.parse(localStorage.getItem("paymentConfirmationMessage"))
+  //   console.log(noticationCart)
+
+  
+  // }
