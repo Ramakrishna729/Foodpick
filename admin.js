@@ -521,10 +521,11 @@ function editDeleteContainer(){
  editDelete.addEventListener("click",function(){
   document.getElementById("edit-delete-container").style.display = "none"
  })
+
 }
 
 
- 
+//  document.getElementById()
 
 
 
@@ -539,14 +540,20 @@ document.getElementById("displayNotification").innerHTML = cart2.map((items)=>
       {
           var {image,title, price,item} = items;
           return(
-              `<div class='cart-item' style = "display:flex;flex-direction:column;position:justify-content:center;align-items:center">
+              `
+              <div id = "notificationClose">x
+              
+              <div class='cart-item' style = "display:flex;flex-direction:row;flex-wrap:wrap;justify-content:start;align-items:end;">
               <div class='row-img'>
-                  <img class='rowimg' src=${image}>
+                  <img class='rowimg' src=${image} style = "width:100px;height:100px;">
               </div>
+              <div style = "display:flex;flex-direction:column">
               <p style='font-size:12px;'>${item}</p>
 
               <p style='font-size:12px;color:orange;'>${title}</p>
-              <p style='font-size:12px;color:orange;'>${price}</p>
+              <p style='font-size:12px;color:orange;'>Rs ${price}</p>
+              </div>
+              </div>
             `);
       }).join('');
   }
@@ -561,3 +568,8 @@ document.getElementById("displayNotification").innerHTML = cart2.map((items)=>
 
   
   // }
+
+  document.getElementById("notificationClose").addEventListener("click",function(){
+    document.getElementById("displayNotification").style.display = "none"
+
+  })

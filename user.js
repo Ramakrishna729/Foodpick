@@ -407,6 +407,7 @@ function showPayment(){
    
    }
    else{localStorage.setItem('paymentConfirmationMessage',JSON.stringify(cart))
+   localStorage.removeItem("paymentConfirmationMessage",res)
 
    }
    
